@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Dream Apps — Додатки</title>
+<meta name="description" content="Dream Apps створює чисті, зручні Android-додатки — без зайвого, без підписок, без клопоту." />
+<link rel="canonical" href="https://dreamapps.it.com/" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#07070b" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f6f5fb" media="(prefers-color-scheme: light)" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dream Apps" />
+<meta property="og:title" content="Dream Apps — Додатки" />
+<meta property="og:description" content="Чисті, зручні Android-додатки — без зайвого, без підписок, без клопоту." />
+<meta property="og:url" content="https://dreamapps.it.com/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* ============ RESET & TOKENS ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --violet:#a855f7;
+  --violet-2:#c084fc;
+  --sky:#38bdf8;
+  --rose:#fb7185;
+  --amber:#fbbf24;
+  --mint:#34d399;
+
+  --bg:#000000;
+  --bg-elev:#0c0714;
+  --panel:rgba(255,255,255,.04);
+  --panel-2:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.10);
+  --border-strong:rgba(168,85,247,.42);
+  --text:#f4f2fb;
+  --heading:#ffffff;
+  --muted:#9c99b4;
+  --accent:var(--violet);
+  --accent-ink:#d8b4fe;
+  --accent-soft:rgba(168,85,247,.16);
+  --ring:rgba(168,85,247,.6);
+  --shadow:0 24px 60px -24px rgba(0,0,0,.85);
+  --glow:.5;
+  --noise:.05;
+
+  --logo:url("data:image/png;base64,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");
+  --radius:18px;
+  --radius-lg:26px;
+  --maxw:1140px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+:root[data-theme="light"]{
+  --bg:#f6f5fb;
+  --bg-elev:#ffffff;
+  --panel:rgba(255,255,255,.75);
+  --panel-2:#ffffff;
+  --border:rgba(20,12,48,.10);
+  --border-strong:rgba(20,12,48,.18);
+  --text:#211d33;
+  --heading:#100c22;
+  --muted:#635f7c;
+  --accent:#6d3ff2;
+  --accent-ink:#5b30d6;
+  --accent-soft:rgba(109,63,242,.10);
+  --ring:rgba(109,63,242,.45);
+  --shadow:0 24px 50px -28px rgba(38,20,90,.35);
+  --glow:.55;
+  --noise:.025;
+}
+
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-text-size-adjust:100%}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  transition:background .4s var(--ease),color .4s var(--ease);
+}
+
+/* film grain */
+body::after{
+  content:'';position:fixed;inset:-50%;pointer-events:none;z-index:9;
+  opacity:var(--noise);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection{background:var(--accent);color:#fff}
+
+a{color:inherit}
+:where(a,button,input,summary):focus-visible{
+  outline:2px solid var(--ring);outline-offset:3px;border-radius:10px;
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:2}
+
+/* ============ AMBIENT BACKGROUND ============ */
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:var(--glow)}
+.orb.a{width:620px;height:620px;top:-260px;left:50%;margin-left:-420px;
+  background:radial-gradient(circle,rgba(168,85,247,.62),transparent 68%);animation:drift 26s var(--ease) infinite alternate}
+.orb.b{width:520px;height:520px;top:-140px;right:-160px;
+  background:radial-gradient(circle,rgba(56,189,248,.34),transparent 68%);animation:drift 32s var(--ease) infinite alternate-reverse}
+.orb.c{width:560px;height:560px;top:52%;left:-220px;
+  background:radial-gradient(circle,rgba(251,113,133,.22),transparent 68%);animation:drift 38s var(--ease) infinite alternate}
+:root[data-theme="light"] .orb{filter:blur(80px)}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(60px,50px,0) scale(1.14)}}
+
+.grid-lines{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000 0%,transparent 75%);
+  mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000 0%,transparent 75%);
+  opacity:.7;
+}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:80;
+  border-bottom:1px solid transparent;
+  transition:background .3s,border-color .3s,backdrop-filter .3s;
+}
+.nav.scrolled,.nav.menu-open{
+  background:color-mix(in srgb,var(--bg) 78%,transparent);
+  backdrop-filter:blur(16px) saturate(160%);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
+  border-bottom-color:var(--border);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;flex:0 0 auto;
+  background-image:var(--logo);background-size:cover;background-position:center;
+  box-shadow:0 0 0 1px var(--border),0 8px 22px -10px rgba(168,85,247,.95);
+  transition:transform .35s var(--ease);
+}
+.brand:hover .logo-mark{transform:rotate(-6deg) scale(1.06)}
+.brand-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.4px;color:var(--heading);white-space:nowrap}
+.brand-name span{background:linear-gradient(100deg,var(--violet-2),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{
+  position:relative;text-decoration:none;color:var(--muted);font-size:14.5px;font-weight:500;
+  padding:8px 14px;border-radius:10px;transition:color .2s,background .2s;white-space:nowrap;
+}
+.nav-link:hover{color:var(--text);background:var(--panel)}
+
+.nav-tools{display:flex;align-items:center;gap:8px}
+
+.icon-btn{
+  display:grid;place-items:center;width:38px;height:38px;border-radius:11px;cursor:pointer;
+  background:var(--panel);border:1px solid var(--border);color:var(--text);
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.icon-btn:hover{border-color:var(--border-strong);background:var(--panel-2);transform:translateY(-1px)}
+.icon-btn svg{width:17px;height:17px}
+:root[data-theme="dark"] .i-sun{display:block}
+:root[data-theme="dark"] .i-moon{display:none}
+:root[data-theme="light"] .i-sun{display:none}
+:root[data-theme="light"] .i-moon{display:block}
+
+/* language switcher */
+.lang{position:relative}
+.lang-btn{
+  display:flex;align-items:center;gap:7px;height:38px;padding:0 12px;border-radius:11px;cursor:pointer;
+  background:var(--panel);border:1px solid var(--border);color:var(--text);
+  font-family:inherit;font-size:13.5px;font-weight:600;letter-spacing:.3px;
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.lang-btn:hover{border-color:var(--border-strong);background:var(--panel-2);transform:translateY(-1px)}
+.lang-btn .chev{width:12px;height:12px;opacity:.6;transition:transform .25s var(--ease)}
+.lang-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
+
+.lang-menu{
+  position:absolute;top:calc(100% + 10px);inset-inline-end:0;width:236px;
+  background:var(--bg-elev);border:1px solid var(--border);border-radius:16px;padding:7px;
+  box-shadow:var(--shadow);z-index:90;
+  display:flex;flex-direction:column;max-height:min(64vh,420px);
+  opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transform-origin:top right;
+  transition:opacity .2s var(--ease),transform .24s var(--ease),visibility .24s;
+}
+[dir="rtl"] .lang-menu{transform-origin:top left}
+.lang-menu.open{opacity:1;visibility:visible;transform:none}
+
+.lang-search{
+  width:100%;flex:0 0 auto;margin-bottom:6px;
+  font-family:inherit;font-size:13.5px;color:var(--text);
+  background:var(--panel);border:1px solid var(--border);border-radius:11px;
+  padding:9px 12px;transition:border-color .2s;
+}
+.lang-search::placeholder{color:var(--muted)}
+.lang-search:focus{outline:none;border-color:var(--accent)}
+.lang-list{overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:1px}
+.lang-list::-webkit-scrollbar{width:8px}
+.lang-list::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:8px}
+.lang-empty{padding:12px;font-size:13px;color:var(--muted);text-align:center}
+
+.lang-opt{
+  display:flex;align-items:center;gap:10px;width:100%;text-align:start;cursor:pointer;flex:0 0 auto;
+  background:none;border:0;color:var(--muted);font-family:inherit;font-size:14px;
+  padding:9px 11px;border-radius:11px;transition:background .15s,color .15s;
+}
+.lang-opt:hover{background:var(--accent-soft);color:var(--text)}
+.lang-opt .flag{font-size:17px;line-height:1}
+.lang-opt .l-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lang-opt.active{color:var(--accent-ink);font-weight:600;background:var(--accent-soft)}
+.lang-opt .tick{margin-inline-start:auto;width:15px;height:15px;opacity:0;flex:0 0 auto}
+.lang-opt.active .tick{opacity:1}
+
+.burger{display:none}
+
+/* mobile drawer */
+.drawer{
+  display:none;flex-direction:column;gap:2px;padding:8px 0 18px;border-top:1px solid var(--border);
+}
+.drawer.open{display:flex}
+.drawer a{
+  text-decoration:none;color:var(--text);font-size:16px;font-weight:500;
+  padding:13px 14px;border-radius:12px;transition:background .2s;
+}
+.drawer a:hover{background:var(--panel)}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:clamp(56px,9vw,110px) 0 clamp(60px,9vw,110px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:center}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:11.5px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;
+  color:var(--accent-ink);background:var(--accent-soft);
+  border:1px solid color-mix(in srgb,var(--accent) 32%,transparent);
+  padding:7px 15px;border-radius:100px;
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--ring);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--ring)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+h1{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(40px,6.2vw,74px);font-weight:800;line-height:1.02;letter-spacing:-2.6px;
+  color:var(--heading);margin:26px 0 22px;text-wrap:balance;
+}
+h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,#c084fc 0%,#e9d5ff 42%,var(--sky) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+:root[data-theme="light"] h1 em{background:linear-gradient(100deg,#7c3aed,#a855f7 45%,#0ea5e9);-webkit-background-clip:text;background-clip:text}
+
+.hero-sub{font-size:clamp(16px,1.5vw,18.5px);color:var(--muted);max-width:520px;line-height:1.72}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;
+  padding:14px 26px;border-radius:13px;border:1px solid transparent;
+  transition:transform .22s var(--ease),box-shadow .22s,border-color .2s,background .2s,opacity .2s;
+}
+.btn svg{width:16px;height:16px}
+.btn-primary{
+  color:#fff;background:linear-gradient(120deg,#8b5cf6,#a855f7 48%,#7c3aed);
+  box-shadow:0 14px 34px -14px rgba(168,85,247,.85),inset 0 1px 0 rgba(255,255,255,.25);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 44px -14px rgba(168,85,247,1),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn-ghost{color:var(--text);background:var(--panel);border-color:var(--border)}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--border-strong);background:var(--panel-2)}
+
+
+/* phone mock */
+.hero-art{display:flex;justify-content:center;perspective:1400px}
+.phone{
+  position:relative;width:290px;height:592px;border-radius:44px;padding:11px;
+  background:linear-gradient(160deg,rgba(255,255,255,.20),rgba(255,255,255,.03) 42%,rgba(255,255,255,.12));
+  box-shadow:0 60px 110px -40px rgba(0,0,0,.9),0 0 0 1px var(--border);
+  animation:float 8s ease-in-out infinite;
+  transform:rotateY(-13deg) rotateX(5deg) rotateZ(1.5deg);
+}
+:root[data-theme="light"] .phone{box-shadow:0 60px 90px -46px rgba(50,25,110,.55),0 0 0 1px rgba(20,12,48,.12)}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -16px}}
+.screen{
+  position:relative;height:100%;border-radius:34px;overflow:hidden;
+  background:radial-gradient(120% 90% at 20% 0%,#3b1170 0%,#160b28 48%,#050208 100%);
+  border:1px solid rgba(255,255,255,.07);
+  display:flex;flex-direction:column;padding:22px 18px;gap:16px;color:#efeafd;
+}
+.screen::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:180px;
+  background:radial-gradient(60% 100% at 50% 0%,rgba(168,85,247,.6),transparent 70%);
+}
+.notch{width:82px;height:5px;border-radius:100px;background:rgba(255,255,255,.22);margin:0 auto}
+.screen-h{position:relative;font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;letter-spacing:-.5px;margin-top:4px}
+.screen-s{position:relative;font-size:11.5px;color:#a49ec6;margin-top:-12px}
+
+.tiles{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:4px}
+.tile{
+  background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);
+  border-radius:17px;padding:13px 11px;display:flex;flex-direction:column;gap:9px;
+}
+.tile .ic{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;color:#fff}
+.tile .ic svg{width:17px;height:17px}
+.tile b{font-size:11.5px;font-weight:600;letter-spacing:-.2px}
+.tile i{font-style:normal;font-size:9.5px;color:#918bb4}
+
+.np{
+  position:relative;margin-top:auto;border-radius:19px;padding:13px;
+  background:linear-gradient(120deg,rgba(168,85,247,.36),rgba(56,189,248,.16));
+  border:1px solid rgba(255,255,255,.12);display:flex;gap:11px;align-items:center;
+}
+.np .art{width:40px;height:40px;border-radius:11px;background:linear-gradient(140deg,#a855f7,#38bdf8);flex:0 0 auto;display:grid;place-items:center;color:#fff}
+.np .art svg{width:18px;height:18px}
+.np-t{font-size:12px;font-weight:600}
+.np-s{font-size:10px;color:#b8b2d8}
+.bars{display:flex;align-items:flex-end;gap:2.5px;height:20px;margin-inline-start:auto}
+.bars i{width:2.5px;border-radius:2px;background:#e9e3ff;animation:eq 1.05s ease-in-out infinite}
+.bars i:nth-child(1){height:40%;animation-delay:0s}
+.bars i:nth-child(2){height:85%;animation-delay:.15s}
+.bars i:nth-child(3){height:55%;animation-delay:.3s}
+.bars i:nth-child(4){height:95%;animation-delay:.45s}
+@keyframes eq{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+
+/* ============ SECTIONS ============ */
+section{position:relative;z-index:2}
+.sec{padding:clamp(70px,9vw,124px) 0}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-label{
+  display:block;font-size:11.5px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;
+  color:var(--accent-ink);margin-bottom:14px;
+}
+h2{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(29px,4.2vw,48px);font-weight:800;line-height:1.08;letter-spacing:-1.6px;
+  color:var(--heading);text-wrap:balance;
+}
+.sec-sub{margin-top:16px;color:var(--muted);font-size:16.5px;max-width:560px}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+
+/* ============ APP CARDS ============ */
+.apps-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{
+  position:relative;overflow:hidden;isolation:isolate;
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:30px 28px 26px;
+  transition:transform .35s var(--ease),border-color .3s,box-shadow .35s,background .3s;
+}
+.card::before{
+  content:'';position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .35s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c) 20%,transparent),transparent 62%);
+}
+.card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--c) 45%,transparent);box-shadow:var(--shadow)}
+.card:hover::before{opacity:1}
+
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:22px}
+.app-ic{
+  width:58px;height:58px;border-radius:18px;display:grid;place-items:center;color:#fff;flex:0 0 auto;
+  background:linear-gradient(140deg,var(--c),color-mix(in srgb,var(--c) 45%,#6b21a8));
+  box-shadow:0 14px 30px -14px var(--c),inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .35s var(--ease);
+}
+.card:hover .app-ic{transform:scale(1.06) rotate(-4deg)}
+.app-ic svg{width:27px;height:27px}
+
+.chip{
+  display:inline-flex;align-items:center;gap:6px;flex-shrink:0;
+  font-size:11px;font-weight:600;letter-spacing:.3px;
+  color:var(--accent-ink);background:var(--accent-soft);
+  border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);
+  padding:6px 12px;border-radius:100px;
+}
+.chip svg{width:12px;height:12px}
+.chip .dot{width:5px;height:5px;border-radius:50%;background:currentColor}
+
+.app-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:var(--heading);margin-bottom:9px}
+.app-desc{font-size:14.5px;color:var(--muted);line-height:1.62}
+.app-meta{display:flex;align-items:center;gap:8px;margin-top:22px;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted)}
+.app-meta svg{width:14px;height:14px;color:var(--c)}
+
+/* ============ VALUES ============ */
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.value{
+  background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+  padding:28px 26px;transition:transform .3s var(--ease),border-color .3s,background .3s;
+}
+.value:hover{transform:translateY(-4px);border-color:var(--border-strong)}
+.v-ic{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;margin-bottom:18px;
+  color:var(--accent-ink);background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);
+}
+.v-ic svg{width:21px;height:21px}
+.value h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:17.5px;font-weight:700;letter-spacing:-.3px;color:var(--heading);margin-bottom:9px}
+.value p{font-size:14.5px;color:var(--muted);line-height:1.62}
+
+/* ============ PRIVACY ============ */
+.policy{max-width:740px;margin:0 auto}
+.policy .date{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+.policy .lead{font-size:15.5px;color:var(--muted);line-height:1.85}
+.policy h3{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;
+  color:var(--heading);margin:28px 0 8px;
+}
+.policy p{font-size:15px;color:var(--muted);line-height:1.85}
+.policy ul{margin:10px 0 0;padding-inline-start:20px}
+.policy li{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:6px}
+.policy a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent);transition:border-color .2s}
+.policy a:hover{border-bottom-color:var(--accent)}
+
+/* ============ CONTACT ============ */
+.contact-panel{
+  position:relative;overflow:hidden;text-align:center;
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:clamp(44px,6vw,76px) 28px;
+  background:
+    radial-gradient(120% 130% at 50% 0%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 62%),
+    var(--panel);
+}
+.contact-panel::after{
+  content:'';position:absolute;left:50%;top:-1px;width:260px;height:2px;transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+}
+.contact-panel h2{margin-bottom:14px}
+.contact-panel p{color:var(--muted);max-width:480px;margin:0 auto 32px}
+.mail-btn{
+  display:inline-flex;align-items:center;gap:11px;text-decoration:none;
+  font-size:15.5px;font-weight:600;color:var(--text);
+  background:var(--bg-elev);border:1px solid var(--border);
+  padding:14px 24px;border-radius:14px;
+  transition:transform .22s var(--ease),border-color .2s,box-shadow .22s;
+}
+.mail-btn:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 55%,transparent);box-shadow:var(--shadow)}
+.mail-btn svg{width:18px;height:18px;color:var(--accent)}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--border);padding:34px 0;position:relative;z-index:2}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.foot-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.foot-brand .logo-mark{width:30px;height:30px;border-radius:9px}
+.foot-brand b{font-family:'Plus Jakarta Sans',sans-serif;font-size:14.5px;font-weight:700;color:var(--text)}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+.foot-links a{color:var(--muted);text-decoration:none;font-size:13.5px;transition:color .2s}
+.foot-links a:hover{color:var(--text)}
+.foot p{font-size:13px;color:var(--muted)}
+
+/* ============ SCRIPTS THAT DISLIKE TIGHT TRACKING ============ */
+/* negative letter-spacing mangles Arabic/Indic/CJK/Thai shaping */
+html:is([lang="ar"],[lang="ur"],[lang="fa"],[lang="he"],[lang="th"],[lang="hi"],[lang="bn"],[lang="ta"],[lang="ja"],[lang="ko"],[lang="zh"])
+:is(h1,h2,h3,.app-name,.brand-name,.screen-h){letter-spacing:normal}
+[dir="rtl"] .app-meta svg,[dir="rtl"] .chip svg{transform:scaleX(-1)}
+
+/* ============ REVEAL ============ */
+/* hidden only when scripting is available — without JS everything stays visible */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0ms)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:56px;text-align:center}
+  .hero-sub{margin-inline:auto}
+  .cta-row{justify-content:center}
+  .eyebrow{margin-inline:auto}
+  .sec-head{margin-inline:auto;text-align:center}
+  .sec-sub{margin-inline:auto}
+  .phone{transform:none;width:274px;height:560px}
+}
+@media (max-width:820px){
+  .nav-links{display:none}
+  .burger{display:grid}
+  .apps-grid,.policy,.values{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .wrap{padding:0 18px}
+  h1{letter-spacing:-1.6px}
+  .card{padding:26px 22px 22px}
+  .btn{width:100%}
+  .foot{flex-direction:column;text-align:center}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition-duration:.01ms !important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+<script>
+document.documentElement.classList.add('js');
+/* safety net: if the observer never ran, un-hide whatever is already on screen */
+setTimeout(function(){
+  document.querySelectorAll('.reveal:not(.in)').forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in');
+  });
+}, 2500);
+</script>
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true">
+  <div class="grid-lines"></div>
+  <div class="orb a"></div>
+  <div class="orb b"></div>
+  <div class="orb c"></div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="Dream Apps">
+        <span class="logo-mark"></span>
+        <span class="brand-name">Dream<span>Apps</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main">
+        <a class="nav-link" href="#apps" data-i18n="nav_apps">Додатки</a>
+        <a class="nav-link" href="#values" data-i18n="values_label">Наш підхід</a>
+        <a class="nav-link" href="#privacy" data-i18n="nav_privacy">Політика</a>
+        <a class="nav-link" href="#contact" data-i18n="nav_contact">Контакт</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Theme" title="Theme">
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1Z"/></svg>
+        </button>
+
+        <div class="lang">
+          <button class="lang-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false">
+            <span id="langFlag">🇺🇦</span><span id="langCode">UA</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu">
+            <input class="lang-search" id="langSearch" type="search" autocomplete="off" spellcheck="false" aria-label="Search language" />
+            <div class="lang-list" id="langList"></div>
+          </div>
+        </div>
+
+        <button class="icon-btn burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="drawer" id="drawer">
+      <a href="#apps" data-i18n="nav_apps">Додатки</a>
+      <a href="#values" data-i18n="values_label">Наш підхід</a>
+      <a href="#privacy" data-i18n="nav_privacy">Політика</a>
+      <a href="#contact" data-i18n="nav_contact">Контакт</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow reveal"><span class="dot"></span><span data-i18n="hero_label">Android-додатки</span></span>
+        <h1 class="reveal" style="--d:70ms" data-i18n="hero_title">Додатки<br><em>з фірмовою естетикою Dream&nbsp;Apps</em></h1>
+        <p class="hero-sub reveal" style="--d:140ms" data-i18n="hero_sub">Dream Apps створює чисті, зручні додатки — без зайвого, без підписок, без клопоту.</p>
+
+        <div class="cta-row reveal" style="--d:210ms">
+          <a href="#apps" class="btn btn-primary">
+            <span data-i18n="hero_btn">Переглянути додатки</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=dreamapps.contact@gmail.com" target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            <span data-i18n="hero_cta2">Написати нам</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-art reveal" style="--d:180ms" aria-hidden="true">
+        <div class="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="screen-h">Dream Apps</div>
+            <div class="screen-s">dreamapps.it.com</div>
+            <div class="tiles">
+              <div class="tile">
+                <span class="ic" style="background:linear-gradient(140deg,#38bdf8,#3b82f6)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15.3 15.3 0 0 1 0 18a15.3 15.3 0 0 1 0-18Z"/></svg>
+                </span>
+                <div><b>DreamTranslator</b><br><i>Translate</i></div>
+              </div>
+              <div class="tile">
+                <span class="ic" style="background:linear-gradient(140deg,#fbbf24,#f97316)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+                </span>
+                <div><b>DreamNotes</b><br><i>Notes</i></div>
+              </div>
+              <div class="tile">
+                <span class="ic" style="background:linear-gradient(140deg,#c084fc,#a855f7)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5.5l11-2.2V16"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+                </span>
+                <div><b>DreamAmp</b><br><i>Music</i></div>
+              </div>
+              <div class="tile">
+                <span class="ic" style="background:linear-gradient(140deg,#fb7185,#e11d48)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="13" height="13" rx="3"/><path d="m15.5 12 6-3.6v7.2Z"/></svg>
+                </span>
+                <div><b>VideoPlayer</b><br><i>Video</i></div>
+              </div>
+            </div>
+            <div class="np">
+              <span class="art">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5.5l11-2.2V16"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+              </span>
+              <div><div class="np-t">DreamAmp</div><div class="np-s">Equalizer · Background</div></div>
+              <div class="bars"><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ============ APPS ============ -->
+<section class="sec" id="apps">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label" data-i18n="apps_label">Наші додатки</span>
+      <h2 data-i18n="apps_title">Що ми зараз будуємо</h2>
+    </div>
+
+    <div class="apps-grid">
+      <article class="card reveal" style="--c:#38bdf8">
+        <div class="card-top">
+          <span class="app-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15.3 15.3 0 0 1 0 18a15.3 15.3 0 0 1 0-18Z"/></svg>
+          </span>
+          <span class="chip"><span class="dot"></span><span data-i18n="badge_soon">Скоро в Google Play</span></span>
+        </div>
+        <h3 class="app-name">DreamTranslator</h3>
+        <p class="app-desc" data-i18n="app_translator">Швидкий перекладач тексту завжди під рукою.</p>
+        <div class="app-meta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 9.3 9 10 5.2-.7 9-5 9-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span data-i18n="meta_private">Дані залишаються на пристрої</span>
+        </div>
+      </article>
+
+      <article class="card reveal" style="--c:#fbbf24;--d:80ms">
+        <div class="card-top">
+          <span class="app-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+          </span>
+          <span class="chip"><span class="dot"></span><span data-i18n="badge_soon">Скоро в Google Play</span></span>
+        </div>
+        <h3 class="app-name">DreamNotes</h3>
+        <p class="app-desc" data-i18n="app_notes">Простий нотатник без відволікань.</p>
+        <div class="app-meta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 9.3 9 10 5.2-.7 9-5 9-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span data-i18n="meta_private">Дані залишаються на пристрої</span>
+        </div>
+      </article>
+
+      <article class="card reveal" style="--c:#c084fc;--d:160ms">
+        <div class="card-top">
+          <span class="app-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5.5l11-2.2V16"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+          </span>
+          <span class="chip"><span class="dot"></span><span data-i18n="badge_soon">Скоро в Google Play</span></span>
+        </div>
+        <h3 class="app-name">DreamAmp</h3>
+        <p class="app-desc" data-i18n="app_amp">Потужний музичний плеєр з еквалайзером і фоновим відтворенням.</p>
+        <div class="app-meta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 9.3 9 10 5.2-.7 9-5 9-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span data-i18n="meta_private">Дані залишаються на пристрої</span>
+        </div>
+      </article>
+
+      <article class="card reveal" style="--c:#fb7185;--d:240ms">
+        <div class="card-top">
+          <span class="app-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="13" height="13" rx="3"/><path d="m15.5 12 6-3.6v7.2Z"/></svg>
+          </span>
+          <span class="chip"><span class="dot"></span><span data-i18n="badge_soon">Скоро в Google Play</span></span>
+        </div>
+        <h3 class="app-name">Dream VideoPlayer</h3>
+        <p class="app-desc" data-i18n="app_video">Плавне відтворення відео всіх популярних форматів.</p>
+        <div class="app-meta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 9.3 9 10 5.2-.7 9-5 9-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span data-i18n="meta_private">Дані залишаються на пристрої</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section class="sec" id="values" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label" data-i18n="values_label">Наш підхід</span>
+      <h2 data-i18n="values_title">Три принципи, яких ми тримаємось</h2>
+    </div>
+
+    <div class="values">
+      <div class="value reveal">
+        <span class="v-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg></span>
+        <h3 data-i18n="v1t">Без підписок</h3>
+        <p data-i18n="v1d">Жодних платних стін і прихованих платежів — усі функції доступні одразу.</p>
+      </div>
+      <div class="value reveal" style="--d:90ms">
+        <span class="v-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10.5" rx="2.6"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><path d="M12 14.6v2.3"/></svg></span>
+        <h3 data-i18n="v2t">Без облікових записів</h3>
+        <p data-i18n="v2d">Не треба реєструватись. Ваші дані залишаються на пристрої.</p>
+      </div>
+      <div class="value reveal" style="--d:180ms">
+        <span class="v-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 2.5 4.6 13.4h6.1L10.2 21.5l8.8-11.1h-6.3Z"/></svg></span>
+        <h3 data-i18n="v3t">Швидко й легко</h3>
+        <p data-i18n="v3d">Мінімум ваги, максимум швидкості — навіть на старих пристроях.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ============ PRIVACY ============ -->
+<!-- ============ CONTACT ============ -->
+<section class="sec" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact-panel reveal">
+      <span class="sec-label" data-i18n="contact_label">Зв'язок</span>
+      <h2 data-i18n="contact_title">Маєте питання?</h2>
+      <p data-i18n="contact_sub">Повідомлення про помилку, побажання або просто привіт — ми будемо раді почути вас.</p>
+      <a class="mail-btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=dreamapps.contact@gmail.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+        dreamapps.contact@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="privacy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-label" data-i18n="privacy_label">Юридична інформація</span>
+      <h2 data-i18n="privacy_title">Політика конфіденційності</h2>
+    </div>
+
+    <div class="policy reveal">
+      <p class="date" data-i18n="privacy_date">Дата набрання чинності: 27 червня 2026 р.</p>
+      <p class="lead" data-i18n="privacy_intro">Dream Apps («ми», «нас») розробляє Android-додатки. Ця Політика конфіденційності пояснює наш підхід до збору та використання даних у всіх наших додатках.</p>
+
+      <h3 data-i18n="privacy_collect_title">Які дані ми збираємо</h3>
+      <p data-i18n="privacy_collect_text">Наші додатки працюють переважно на пристрої користувача. Ми не збираємо, не зберігаємо та не передаємо персональні дані на наші сервери. Зокрема:</p>
+      <ul>
+        <li data-i18n="privacy_li1">Реєстрація або обліковий запис не потрібні.</li>
+        <li data-i18n="privacy_li2">Жодна особиста інформація не передається на наші сервери.</li>
+        <li data-i18n="privacy_li3">Дані додатків (нотатки, налаштування, медіатека) зберігаються лише локально на вашому пристрої.</li>
+      </ul>
+
+      <h3 data-i18n="privacy_third_title">Сторонні сервіси</h3>
+      <p data-i18n="privacy_third_text">Деякі додатки можуть використовувати сторонні сервіси, зокрема Google Play Services. Ці сервіси мають власні політики конфіденційності.</p>
+
+      <h3 data-i18n="privacy_perm_title">Дозволи</h3>
+      <p data-i18n="privacy_perm_text">Наші додатки запитують лише ті дозволи, які необхідні для їх роботи.</p>
+
+      <h3 data-i18n="privacy_kids_title">Безпека для дітей</h3>
+      <p data-i18n="privacy_kids_text">Наші додатки не містять шкідливого для дітей вмісту.</p>
+
+      <h3 data-i18n="privacy_changes_title">Зміни</h3>
+      <p data-i18n="privacy_changes_text">Ми можемо час від часу оновлювати цю політику. Зміни відображатимуться на цій сторінці.</p>
+
+      <h3 data-i18n="privacy_contact_title">Контакт</h3>
+      <p>
+        <span data-i18n="privacy_contact_text">Питання щодо цієї політики? Напишіть нам:</span>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=dreamapps.contact@gmail.com" target="_blank" rel="noopener">dreamapps.contact@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="foot-brand" href="https://dreamapps.it.com">
+        <span class="logo-mark"></span>
+        <b>Dream Apps</b>
+      </a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#apps" data-i18n="nav_apps">Додатки</a>
+        <a href="#privacy" data-i18n="nav_privacy">Політика</a>
+        <a href="#contact" data-i18n="nav_contact">Контакт</a>
+      </nav>
+      <p data-i18n="footer_copy">© 2026 Dream Apps · dreamapps.it.com. Усі права захищені.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============ i18n ============ */
+const langs = {
+  uk: {
+    flag:'🇺🇦', name:'Українська', code:'UA',
+    nav_apps:'Додатки', nav_privacy:'Політика', nav_contact:'Контакт',
+    hero_label:'Android-додатки',
+    hero_title:'Додатки<br><em>з фірмовою естетикою Dream&nbsp;Apps</em>',
+    hero_sub:'Dream Apps створює чисті, зручні додатки — без зайвого, без підписок, без клопоту.',
+    hero_btn:'Переглянути додатки', hero_cta2:'Написати нам',
+    apps_label:'Наші додатки', apps_title:'Що ми зараз будуємо',
+    badge_soon:'Скоро в Google Play', meta_private:'Дані залишаються на пристрої',
+    app_translator:'Швидкий перекладач тексту завжди під рукою.',
+    app_notes:'Простий нотатник без відволікань.',
+    app_amp:'Потужний музичний плеєр з еквалайзером і фоновим відтворенням.',
+    app_video:'Плавне відтворення відео всіх популярних форматів.',
+    values_label:'Наш підхід', values_title:'Три принципи, яких ми тримаємось',
+    v1t:'Без підписок', v1d:'Жодних платних стін і прихованих платежів — усі функції доступні одразу.',
+    v2t:'Без облікових записів', v2d:'Не треба реєструватись. Ваші дані залишаються на пристрої.',
+    v3t:'Швидко й легко', v3d:'Мінімум ваги, максимум швидкості — навіть на старих пристроях.',
+    privacy_label:'Юридична інформація', privacy_title:'Політика конфіденційності',
+    privacy_date:'Дата набрання чинності: 27 червня 2026 р.',
+    privacy_intro:'Dream Apps («ми», «нас») розробляє Android-додатки. Ця Політика конфіденційності пояснює наш підхід до збору та використання даних у всіх наших додатках.',
+    privacy_collect_title:'Які дані ми збираємо',
+    privacy_collect_text:'Наші додатки працюють переважно на пристрої користувача. Ми не збираємо, не зберігаємо та не передаємо персональні дані на наші сервери. Зокрема:',
+    privacy_li1:'Реєстрація або обліковий запис не потрібні.',
+    privacy_li2:'Жодна особиста інформація не передається на наші сервери.',
+    privacy_li3:'Дані додатків (нотатки, налаштування, медіатека) зберігаються лише локально на вашому пристрої.',
+    privacy_third_title:'Сторонні сервіси',
+    privacy_third_text:'Деякі додатки можуть використовувати сторонні сервіси, зокрема Google Play Services. Ці сервіси мають власні політики конфіденційності.',
+    privacy_perm_title:'Дозволи',
+    privacy_perm_text:'Наші додатки запитують лише ті дозволи, які необхідні для їх роботи.',
+    privacy_kids_title:'Безпека для дітей',
+    privacy_kids_text:'Наші додатки не містять шкідливого для дітей вмісту.',
+    privacy_changes_title:'Зміни',
+    privacy_changes_text:'Ми можемо час від часу оновлювати цю політику. Зміни відображатимуться на цій сторінці.',
+    privacy_contact_title:'Контакт',
+    privacy_contact_text:'Питання щодо цієї політики? Напишіть нам:',
+    contact_label:"Зв'язок", contact_title:'Маєте питання?',
+    contact_sub:'Повідомлення про помилку, побажання або просто привіт — ми будемо раді почути вас.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Усі права захищені.',
+    search_ph:'Пошук', theme_toggle:'Тема', menu_toggle:'Меню'
+  },
+  en: {
+    flag:'🇬🇧', name:'English', code:'EN',
+    nav_apps:'Apps', nav_privacy:'Privacy', nav_contact:'Contact',
+    hero_label:'Android apps',
+    hero_title:'Apps built to <em>just work.</em>',
+    hero_sub:'Dream Apps makes clean, focused Android apps — no clutter, no subscriptions, no nonsense.',
+    hero_btn:'Explore apps', hero_cta2:'Get in touch',
+    apps_label:'Our apps', apps_title:'What we are building',
+    badge_soon:'Coming soon on Google Play', meta_private:'Your data stays on your device',
+    app_translator:'Fast text translation always in your pocket.',
+    app_notes:'Simple, distraction-free notes.',
+    app_amp:'Powerful music player with equalizer and background playback.',
+    app_video:'Smooth playback for all popular video formats.',
+    values_label:'Our approach', values_title:'Three rules we build by',
+    v1t:'No subscriptions', v1d:'No paywalls, no hidden charges — every feature is there from the start.',
+    v2t:'No accounts', v2d:'Nothing to sign up for. Your data stays on your device.',
+    v3t:'Fast and light', v3d:'Small downloads, instant launches — even on older phones.',
+    privacy_label:'Legal', privacy_title:'Privacy Policy',
+    privacy_date:'Effective date: June 27, 2026',
+    privacy_intro:'Dream Apps ("we", "us") builds Android applications. This Privacy Policy explains our practices regarding data collection and use across all our apps.',
+    privacy_collect_title:'Data we collect',
+    privacy_collect_text:'Our apps work primarily on-device. We do not collect, store, or share personal data on our servers. Specifically:',
+    privacy_li1:'No account or registration is required.',
+    privacy_li2:'No personal information is transmitted to our servers.',
+    privacy_li3:'App data (notes, preferences, media libraries) is stored locally on your device only.',
+    privacy_third_title:'Third-party services',
+    privacy_third_text:'Some apps may use third-party services such as Google Play Services. These have their own privacy policies.',
+    privacy_perm_title:'Permissions',
+    privacy_perm_text:'Our apps request only the permissions necessary to function.',
+    privacy_kids_title:'Child safety',
+    privacy_kids_text:'Our apps contain no content that is harmful to children.',
+    privacy_changes_title:'Changes',
+    privacy_changes_text:'We may update this policy from time to time. Changes will be reflected on this page.',
+    privacy_contact_title:'Contact',
+    privacy_contact_text:'Questions about this policy? Reach us at:',
+    contact_label:'Get in touch', contact_title:'Have a question?',
+    contact_sub:'Bug report, feature request, or just a hello — we\'d love to hear from you.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. All rights reserved.',
+    search_ph:'Search', theme_toggle:'Theme', menu_toggle:'Menu'
+  },
+  de: {
+    flag:'🇩🇪', name:'Deutsch', code:'DE',
+    nav_apps:'Apps', nav_privacy:'Datenschutz', nav_contact:'Kontakt',
+    hero_label:'Android-Apps',
+    hero_title:'Apps die <em>einfach funktionieren.</em>',
+    hero_sub:'Dream Apps entwickelt saubere Android-Apps — ohne Ablenkung, ohne Abos, ohne Kompromisse.',
+    hero_btn:'Apps entdecken', hero_cta2:'Kontakt aufnehmen',
+    apps_label:'Unsere Apps', apps_title:'Woran wir arbeiten',
+    badge_soon:'Bald bei Google Play', meta_private:'Ihre Daten bleiben auf dem Gerät',
+    app_translator:'Schnelle Textübersetzung immer griffbereit.',
+    app_notes:'Einfache Notizen ohne Ablenkung.',
+    app_amp:'Leistungsstarker Musikplayer mit Equalizer und Hintergrundwiedergabe.',
+    app_video:'Flüssige Wiedergabe aller gängigen Videoformate.',
+    values_label:'Unser Ansatz', values_title:'Drei Prinzipien, nach denen wir bauen',
+    v1t:'Keine Abos', v1d:'Keine Paywalls, keine versteckten Kosten — alle Funktionen von Anfang an.',
+    v2t:'Keine Konten', v2d:'Keine Registrierung nötig. Ihre Daten bleiben auf dem Gerät.',
+    v3t:'Schnell und leicht', v3d:'Kleine Downloads, sofortiger Start — auch auf älteren Geräten.',
+    privacy_label:'Rechtliches', privacy_title:'Datenschutzerklärung',
+    privacy_date:'Gültig ab: 27. Juni 2026',
+    privacy_intro:'Dream Apps entwickelt Android-Anwendungen. Diese Datenschutzerklärung erläutert unsere Praktiken zur Datenerhebung.',
+    privacy_collect_title:'Welche Daten wir erheben',
+    privacy_collect_text:'Unsere Apps arbeiten hauptsächlich auf dem Gerät. Wir erheben keine personenbezogenen Daten auf unseren Servern. Insbesondere:',
+    privacy_li1:'Kein Konto oder keine Registrierung erforderlich.',
+    privacy_li2:'Es werden keine persönlichen Informationen an unsere Server übertragen.',
+    privacy_li3:'App-Daten werden nur lokal auf Ihrem Gerät gespeichert.',
+    privacy_third_title:'Drittanbieter-Dienste',
+    privacy_third_text:'Einige Apps können Drittanbieter-Dienste wie Google Play Services nutzen.',
+    privacy_perm_title:'Berechtigungen',
+    privacy_perm_text:'Unsere Apps fordern nur die Berechtigungen an, die für ihre Funktion notwendig sind.',
+    privacy_kids_title:'Sicherheit für Kinder',
+    privacy_kids_text:'Unsere Apps enthalten keine für Kinder schädlichen Inhalte.',
+    privacy_changes_title:'Änderungen',
+    privacy_changes_text:'Wir können diese Richtlinie von Zeit zu Zeit aktualisieren.',
+    privacy_contact_title:'Kontakt',
+    privacy_contact_text:'Fragen zu dieser Richtlinie? Schreiben Sie uns:',
+    contact_label:'Kontakt', contact_title:'Eine Frage?',
+    contact_sub:'Fehlerbericht, Funktionswunsch oder einfach Hallo — wir freuen uns von Ihnen zu hören.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Alle Rechte vorbehalten.',
+    search_ph:'Suchen', theme_toggle:'Design', menu_toggle:'Menü'
+  },
+  fr: {
+    flag:'🇫🇷', name:'Français', code:'FR',
+    nav_apps:'Apps', nav_privacy:'Confidentialité', nav_contact:'Contact',
+    hero_label:'Applications Android',
+    hero_title:'Des apps qui <em>fonctionnent, tout simplement.</em>',
+    hero_sub:'Dream Apps crée des applications Android propres et efficaces — sans superflu, sans abonnements.',
+    hero_btn:'Découvrir les apps', hero_cta2:'Nous contacter',
+    apps_label:'Nos apps', apps_title:'Ce que nous construisons',
+    badge_soon:'Bientôt sur Google Play', meta_private:'Vos données restent sur l\'appareil',
+    app_translator:'Traduction rapide de texte toujours à portée de main.',
+    app_notes:'Prise de notes simple sans distractions.',
+    app_amp:'Lecteur de musique puissant avec égaliseur et lecture en arrière-plan.',
+    app_video:'Lecture fluide de tous les formats vidéo populaires.',
+    values_label:'Notre approche', values_title:'Trois principes qui nous guident',
+    v1t:'Sans abonnement', v1d:'Aucun paywall, aucun frais caché — toutes les fonctions dès le départ.',
+    v2t:'Sans compte', v2d:'Aucune inscription. Vos données restent sur votre appareil.',
+    v3t:'Rapide et léger', v3d:'Téléchargements légers, lancement instantané — même sur les anciens téléphones.',
+    privacy_label:'Mentions légales', privacy_title:'Politique de confidentialité',
+    privacy_date:'Date d\'entrée en vigueur : 27 juin 2026',
+    privacy_intro:'Dream Apps développe des applications Android. Cette politique explique nos pratiques en matière de collecte de données.',
+    privacy_collect_title:'Données collectées',
+    privacy_collect_text:'Nos applications fonctionnent principalement sur l\'appareil. Nous ne collectons pas de données personnelles sur nos serveurs. Plus précisément :',
+    privacy_li1:'Aucun compte ou inscription requis.',
+    privacy_li2:'Aucune information personnelle n\'est transmise à nos serveurs.',
+    privacy_li3:'Les données des apps sont stockées uniquement localement sur votre appareil.',
+    privacy_third_title:'Services tiers',
+    privacy_third_text:'Certaines apps peuvent utiliser des services tiers comme Google Play Services.',
+    privacy_perm_title:'Autorisations',
+    privacy_perm_text:'Nos apps ne demandent que les autorisations nécessaires à leur fonctionnement.',
+    privacy_kids_title:'Sécurité des enfants',
+    privacy_kids_text:'Nos applications ne contiennent aucun contenu nuisible aux enfants.',
+    privacy_changes_title:'Modifications',
+    privacy_changes_text:'Nous pouvons mettre à jour cette politique de temps en temps.',
+    privacy_contact_title:'Contact',
+    privacy_contact_text:'Des questions sur cette politique ? Contactez-nous :',
+    contact_label:'Nous contacter', contact_title:'Une question ?',
+    contact_sub:'Rapport de bug, suggestion ou simple bonjour — nous serions ravis de vous entendre.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Tous droits réservés.',
+    search_ph:'Rechercher', theme_toggle:'Thème', menu_toggle:'Menu'
+  },
+  es: {
+    flag:'🇪🇸', name:'Español', code:'ES',
+    nav_apps:'Apps', nav_privacy:'Privacidad', nav_contact:'Contacto',
+    hero_label:'Aplicaciones Android',
+    hero_title:'Apps que <em>simplemente funcionan.</em>',
+    hero_sub:'Dream Apps crea aplicaciones Android limpias y enfocadas — sin desorden, sin suscripciones.',
+    hero_btn:'Ver apps', hero_cta2:'Contáctanos',
+    apps_label:'Nuestras apps', apps_title:'En qué estamos trabajando',
+    badge_soon:'Próximamente en Google Play', meta_private:'Tus datos se quedan en tu dispositivo',
+    app_translator:'Traducción de texto rápida siempre a mano.',
+    app_notes:'Notas simples sin distracciones.',
+    app_amp:'Reproductor de música potente con ecualizador y reproducción en segundo plano.',
+    app_video:'Reproducción fluida de todos los formatos de vídeo populares.',
+    values_label:'Nuestro enfoque', values_title:'Tres principios que seguimos',
+    v1t:'Sin suscripciones', v1d:'Sin muros de pago ni cargos ocultos: todas las funciones desde el principio.',
+    v2t:'Sin cuentas', v2d:'Nada que registrar. Tus datos se quedan en tu dispositivo.',
+    v3t:'Rápido y ligero', v3d:'Descargas pequeñas y arranque instantáneo, incluso en móviles antiguos.',
+    privacy_label:'Legal', privacy_title:'Política de privacidad',
+    privacy_date:'Fecha de vigencia: 27 de junio de 2026',
+    privacy_intro:'Dream Apps desarrolla aplicaciones Android. Esta política explica nuestras prácticas de recopilación de datos.',
+    privacy_collect_title:'Datos que recopilamos',
+    privacy_collect_text:'Nuestras apps funcionan principalmente en el dispositivo. No recopilamos datos personales en nuestros servidores. Específicamente:',
+    privacy_li1:'No se requiere cuenta ni registro.',
+    privacy_li2:'No se transmite información personal a nuestros servidores.',
+    privacy_li3:'Los datos de la app se almacenan solo localmente en tu dispositivo.',
+    privacy_third_title:'Servicios de terceros',
+    privacy_third_text:'Algunas apps pueden usar servicios de terceros como Google Play Services.',
+    privacy_perm_title:'Permisos',
+    privacy_perm_text:'Nuestras apps solicitan solo los permisos necesarios para su funcionamiento.',
+    privacy_kids_title:'Seguridad infantil',
+    privacy_kids_text:'Nuestras apps no contienen contenido dañino para los niños.',
+    privacy_changes_title:'Cambios',
+    privacy_changes_text:'Podemos actualizar esta política de vez en cuando.',
+    privacy_contact_title:'Contacto',
+    privacy_contact_text:'¿Preguntas sobre esta política? Contáctenos:',
+    contact_label:'Contáctenos', contact_title:'¿Tienes alguna pregunta?',
+    contact_sub:'Informe de error, solicitud de función o simplemente un hola — nos encantaría escucharte.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Todos los derechos reservados.',
+    search_ph:'Buscar', theme_toggle:'Tema', menu_toggle:'Menú'
+  },
+  pt: {
+    flag:'🇧🇷', name:'Português', code:'PT',
+    nav_apps:'Apps', nav_privacy:'Privacidade', nav_contact:'Contato',
+    hero_label:'Aplicativos Android',
+    hero_title:'Apps que <em>simplesmente funcionam.</em>',
+    hero_sub:'Dream Apps cria aplicativos Android limpos e focados — sem bagunça, sem assinaturas.',
+    hero_btn:'Ver apps', hero_cta2:'Fale conosco',
+    apps_label:'Nossos apps', apps_title:'O que estamos construindo',
+    badge_soon:'Em breve no Google Play', meta_private:'Seus dados ficam no seu dispositivo',
+    app_translator:'Tradução de texto rápida sempre à mão.',
+    app_notes:'Notas simples sem distrações.',
+    app_amp:'Poderoso player de música com equalizador e reprodução em segundo plano.',
+    app_video:'Reprodução suave de todos os formatos de vídeo populares.',
+    values_label:'Nossa abordagem', values_title:'Três princípios que seguimos',
+    v1t:'Sem assinaturas', v1d:'Sem paywalls nem cobranças ocultas — todos os recursos desde o início.',
+    v2t:'Sem contas', v2d:'Nada para registrar. Seus dados ficam no seu dispositivo.',
+    v3t:'Rápido e leve', v3d:'Downloads pequenos e abertura instantânea — mesmo em celulares antigos.',
+    privacy_label:'Legal', privacy_title:'Política de Privacidade',
+    privacy_date:'Data de vigência: 27 de junho de 2026',
+    privacy_intro:'Dream Apps desenvolve aplicativos Android. Esta política explica nossas práticas de coleta de dados.',
+    privacy_collect_title:'Dados que coletamos',
+    privacy_collect_text:'Nossos apps funcionam principalmente no dispositivo. Não coletamos dados pessoais em nossos servidores. Especificamente:',
+    privacy_li1:'Nenhuma conta ou cadastro é necessário.',
+    privacy_li2:'Nenhuma informação pessoal é transmitida para nossos servidores.',
+    privacy_li3:'Os dados do app são armazenados apenas localmente no seu dispositivo.',
+    privacy_third_title:'Serviços de terceiros',
+    privacy_third_text:'Alguns apps podem usar serviços de terceiros como o Google Play Services.',
+    privacy_perm_title:'Permissões',
+    privacy_perm_text:'Nossos apps solicitam apenas as permissões necessárias para seu funcionamento.',
+    privacy_kids_title:'Segurança das crianças',
+    privacy_kids_text:'Nossos aplicativos não contêm conteúdo prejudicial às crianças.',
+    privacy_changes_title:'Alterações',
+    privacy_changes_text:'Podemos atualizar esta política de tempos em tempos.',
+    privacy_contact_title:'Contato',
+    privacy_contact_text:'Perguntas sobre esta política? Entre em contato:',
+    contact_label:'Entre em contato', contact_title:'Tem alguma dúvida?',
+    contact_sub:'Relatório de bug, sugestão de recurso ou apenas um olá — adoraríamos ouvir você.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Todos os direitos reservados.',
+    search_ph:'Buscar', theme_toggle:'Tema', menu_toggle:'Menu'
+  },
+  pl: {
+    flag:'🇵🇱', name:'Polski', code:'PL',
+    nav_apps:'Aplikacje', nav_privacy:'Prywatność', nav_contact:'Kontakt',
+    hero_label:'Aplikacje na Androida',
+    hero_title:'Aplikacje, które <em>po prostu działają.</em>',
+    hero_sub:'Dream Apps tworzy czyste aplikacje Android — bez bałaganu, bez subskrypcji.',
+    hero_btn:'Zobacz aplikacje', hero_cta2:'Napisz do nas',
+    apps_label:'Nasze aplikacje', apps_title:'Nad czym pracujemy',
+    badge_soon:'Wkrótce w Google Play', meta_private:'Twoje dane zostają na urządzeniu',
+    app_translator:'Szybkie tłumaczenie tekstu zawsze pod ręką.',
+    app_notes:'Proste notatki bez rozpraszaczy.',
+    app_amp:'Potężny odtwarzacz muzyki z korektorem i odtwarzaniem w tle.',
+    app_video:'Płynne odtwarzanie wszystkich popularnych formatów wideo.',
+    values_label:'Nasze podejście', values_title:'Trzy zasady, którymi się kierujemy',
+    v1t:'Bez subskrypcji', v1d:'Żadnych opłat ani ukrytych kosztów — wszystkie funkcje od razu.',
+    v2t:'Bez kont', v2d:'Żadnej rejestracji. Twoje dane zostają na urządzeniu.',
+    v3t:'Szybko i lekko', v3d:'Małe pliki, natychmiastowe uruchamianie — nawet na starszych telefonach.',
+    privacy_label:'Informacje prawne', privacy_title:'Polityka prywatności',
+    privacy_date:'Data wejścia w życie: 27 czerwca 2026 r.',
+    privacy_intro:'Dream Apps tworzy aplikacje Android. Niniejsza polityka wyjaśnia nasze praktyki dotyczące gromadzenia danych.',
+    privacy_collect_title:'Jakie dane zbieramy',
+    privacy_collect_text:'Nasze aplikacje działają głównie na urządzeniu. Nie zbieramy danych osobowych na naszych serwerach. W szczególności:',
+    privacy_li1:'Nie jest wymagane konto ani rejestracja.',
+    privacy_li2:'Żadne dane osobowe nie są przesyłane na nasze serwery.',
+    privacy_li3:'Dane aplikacji są przechowywane wyłącznie lokalnie na Twoim urządzeniu.',
+    privacy_third_title:'Usługi stron trzecich',
+    privacy_third_text:'Niektóre aplikacje mogą korzystać z usług stron trzecich, takich jak Google Play Services.',
+    privacy_perm_title:'Uprawnienia',
+    privacy_perm_text:'Nasze aplikacje żądają tylko uprawnień niezbędnych do ich działania.',
+    privacy_kids_title:'Bezpieczeństwo dzieci',
+    privacy_kids_text:'Nasze aplikacje nie zawierają treści szkodliwych dla dzieci.',
+    privacy_changes_title:'Zmiany',
+    privacy_changes_text:'Możemy od czasu do czasu aktualizować tę politykę.',
+    privacy_contact_title:'Kontakt',
+    privacy_contact_text:'Pytania dotyczące tej polityki? Napisz do nas:',
+    contact_label:'Skontaktuj się', contact_title:'Masz pytanie?',
+    contact_sub:'Zgłoszenie błędu, prośba o funkcję lub po prostu cześć — chętnie Cię wysłuchamy.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Wszelkie prawa zastrzeżone.',
+    search_ph:'Szukaj', theme_toggle:'Motyw', menu_toggle:'Menu'
+  },
+  tr: {
+    flag:'🇹🇷', name:'Türkçe', code:'TR',
+    nav_apps:'Uygulamalar', nav_privacy:'Gizlilik', nav_contact:'İletişim',
+    hero_label:'Android uygulamaları',
+    hero_title:'<em>Sadece çalışan</em> uygulamalar.',
+    hero_sub:'Dream Apps, temiz ve odaklı Android uygulamaları üretir — karmaşa yok, abonelik yok.',
+    hero_btn:'Uygulamaları gör', hero_cta2:'Bize ulaşın',
+    apps_label:'Uygulamalarımız', apps_title:'Üzerinde çalıştıklarımız',
+    badge_soon:'Yakında Google Play\'de', meta_private:'Verileriniz cihazınızda kalır',
+    app_translator:'Hızlı metin çevirisi her zaman elinizin altında.',
+    app_notes:'Dikkat dağıtıcı unsurlar olmadan basit notlar.',
+    app_amp:'Ekolayzer ve arka planda çalma özellikli güçlü müzik çalar.',
+    app_video:'Tüm popüler video formatlarında akıcı oynatma.',
+    values_label:'Yaklaşımımız', values_title:'Bağlı kaldığımız üç ilke',
+    v1t:'Abonelik yok', v1d:'Ödeme duvarı ve gizli ücret yok — tüm özellikler en baştan açık.',
+    v2t:'Hesap yok', v2d:'Kayıt gerekmez. Verileriniz cihazınızda kalır.',
+    v3t:'Hızlı ve hafif', v3d:'Küçük boyut, anında açılış — eski telefonlarda bile.',
+    privacy_label:'Yasal', privacy_title:'Gizlilik Politikası',
+    privacy_date:'Yürürlük tarihi: 27 Haziran 2026',
+    privacy_intro:'Dream Apps, Android uygulamaları geliştirmektedir. Bu politika, veri toplama uygulamalarımızı açıklar.',
+    privacy_collect_title:'Topladığımız veriler',
+    privacy_collect_text:'Uygulamalarımız esas olarak cihazda çalışır. Sunucularımızda kişisel veri toplamaz, saklamaz veya paylaşmayız. Özellikle:',
+    privacy_li1:'Hesap veya kayıt gerekmez.',
+    privacy_li2:'Sunucularımıza kişisel bilgi iletilmez.',
+    privacy_li3:'Uygulama verileri yalnızca cihazınızda yerel olarak saklanır.',
+    privacy_third_title:'Üçüncü taraf hizmetler',
+    privacy_third_text:'Bazı uygulamalar Google Play Services gibi üçüncü taraf hizmetleri kullanabilir.',
+    privacy_perm_title:'İzinler',
+    privacy_perm_text:'Uygulamalarımız yalnızca çalışmaları için gerekli izinleri ister.',
+    privacy_kids_title:'Çocuk güvenliği',
+    privacy_kids_text:'Uygulamalarımız çocuklara zararlı içerik barındırmaz.',
+    privacy_changes_title:'Değişiklikler',
+    privacy_changes_text:'Bu politikayı zaman zaman güncelleyebiliriz.',
+    privacy_contact_title:'İletişim',
+    privacy_contact_text:'Bu politika hakkında sorularınız mı var? Bize yazın:',
+    contact_label:'İletişime geçin', contact_title:'Sorunuz mu var?',
+    contact_sub:'Hata raporu, özellik isteği veya sadece merhaba — sizi duymaktan memnuniyet duyarız.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Tüm hakları saklıdır.',
+    search_ph:'Ara', theme_toggle:'Tema', menu_toggle:'Menü'
+  },
+  hi: {
+    flag:'🇮🇳', name:'हिन्दी', code:'HI',
+    nav_apps:'ऐप्स', nav_privacy:'गोपनीयता', nav_contact:'संपर्क',
+    hero_label:'Android ऐप्स',
+    hero_title:'ऐप्स जो <em>बस काम करते हैं।</em>',
+    hero_sub:'Dream Apps साफ, सरल Android ऐप्स बनाता है — बिना अनावश्यक चीज़ों के, बिना सदस्यता के।',
+    hero_btn:'ऐप्स देखें', hero_cta2:'संपर्क करें',
+    apps_label:'हमारे ऐप्स', apps_title:'हम क्या बना रहे हैं',
+    badge_soon:'जल्द ही Google Play पर', meta_private:'आपका डेटा आपके डिवाइस पर रहता है',
+    app_translator:'तेज़ टेक्स्ट अनुवाद हमेशा आपकी जेब में।',
+    app_notes:'बिना विचलन के सरल नोट्स।',
+    app_amp:'इक्वलाइज़र और बैकग्राउंड प्लेबैक के साथ शक्तिशाली म्यूज़िक प्लेयर।',
+    app_video:'सभी लोकप्रिय वीडियो फॉर्मेट का सहज प्लेबैक।',
+    values_label:'हमारा तरीका', values_title:'हमारे तीन सिद्धांत',
+    v1t:'कोई सदस्यता नहीं', v1d:'कोई पेवॉल या छिपा शुल्क नहीं — सभी सुविधाएँ शुरू से उपलब्ध।',
+    v2t:'कोई खाता नहीं', v2d:'कोई पंजीकरण नहीं। आपका डेटा आपके डिवाइस पर ही रहता है।',
+    v3t:'तेज़ और हल्का', v3d:'छोटा डाउनलोड, तुरंत खुलने वाला — पुराने फ़ोन पर भी।',
+    privacy_label:'कानूनी', privacy_title:'गोपनीयता नीति',
+    privacy_date:'प्रभावी तिथि: 27 जून 2026',
+    privacy_intro:'Dream Apps Android एप्लिकेशन बनाता है। यह नीति हमारे डेटा संग्रह प्रथाओं की व्याख्या करती है।',
+    privacy_collect_title:'हम कौन सा डेटा एकत्र करते हैं',
+    privacy_collect_text:'हमारे ऐप्स मुख्य रूप से डिवाइस पर काम करते हैं। हम सर्वर पर कोई व्यक्तिगत डेटा संग्रहीत नहीं करते। विशेष रूप से:',
+    privacy_li1:'कोई खाता या पंजीकरण आवश्यक नहीं।',
+    privacy_li2:'कोई व्यक्तिगत जानकारी हमारे सर्वर को नहीं भेजी जाती।',
+    privacy_li3:'ऐप डेटा केवल आपके डिवाइस पर स्थानीय रूप से संग्रहीत होता है।',
+    privacy_third_title:'तृतीय-पक्ष सेवाएं',
+    privacy_third_text:'कुछ ऐप्स Google Play Services जैसी तृतीय-पक्ष सेवाओं का उपयोग कर सकते हैं।',
+    privacy_perm_title:'अनुमतियां',
+    privacy_perm_text:'हमारे ऐप्स केवल कार्य के लिए आवश्यक अनुमतियां मांगते हैं।',
+    privacy_kids_title:'बच्चों की सुरक्षा',
+    privacy_kids_text:'हमारे ऐप्स में बच्चों के लिए हानिकारक कोई सामग्री नहीं है।',
+    privacy_changes_title:'परिवर्तन',
+    privacy_changes_text:'हम समय-समय पर इस नीति को अपडेट कर सकते हैं।',
+    privacy_contact_title:'संपर्क',
+    privacy_contact_text:'इस नीति के बारे में प्रश्न? हमें लिखें:',
+    contact_label:'संपर्क करें', contact_title:'कोई प्रश्न है?',
+    contact_sub:'बग रिपोर्ट, सुझाव या बस नमस्ते — हमें आपसे सुनकर खुशी होगी।',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. सर्वाधिकार सुरक्षित।',
+    search_ph:'खोजें', theme_toggle:'थीम', menu_toggle:'मेन्यू'
+  },
+  id: {
+    flag:'🇮🇩', name:'Indonesia', code:'ID',
+    nav_apps:'Aplikasi', nav_privacy:'Privasi', nav_contact:'Kontak',
+    hero_label:'Aplikasi Android',
+    hero_title:'Aplikasi yang <em>langsung berfungsi.</em>',
+    hero_sub:'Dream Apps membuat aplikasi Android yang bersih dan fokus — tanpa kerumitan, tanpa langganan.',
+    hero_btn:'Lihat aplikasi', hero_cta2:'Hubungi kami',
+    apps_label:'Aplikasi kami', apps_title:'Yang sedang kami bangun',
+    badge_soon:'Segera di Google Play', meta_private:'Data Anda tetap di perangkat Anda',
+    app_translator:'Terjemahan teks cepat selalu siap di saku Anda.',
+    app_notes:'Catatan sederhana tanpa gangguan.',
+    app_amp:'Pemutar musik canggih dengan equalizer dan pemutaran latar belakang.',
+    app_video:'Pemutaran video lancar untuk semua format populer.',
+    values_label:'Pendekatan kami', values_title:'Tiga prinsip yang kami pegang',
+    v1t:'Tanpa langganan', v1d:'Tanpa paywall atau biaya tersembunyi — semua fitur tersedia sejak awal.',
+    v2t:'Tanpa akun', v2d:'Tidak perlu mendaftar. Data Anda tetap di perangkat Anda.',
+    v3t:'Cepat dan ringan', v3d:'Unduhan kecil, terbuka seketika — bahkan di ponsel lama.',
+    privacy_label:'Hukum', privacy_title:'Kebijakan Privasi',
+    privacy_date:'Tanggal berlaku: 27 Juni 2026',
+    privacy_intro:'Dream Apps mengembangkan aplikasi Android. Kebijakan ini menjelaskan praktik pengumpulan data kami.',
+    privacy_collect_title:'Data yang kami kumpulkan',
+    privacy_collect_text:'Aplikasi kami bekerja terutama di perangkat. Kami tidak mengumpulkan data pribadi di server kami. Khususnya:',
+    privacy_li1:'Tidak diperlukan akun atau pendaftaran.',
+    privacy_li2:'Tidak ada informasi pribadi yang dikirim ke server kami.',
+    privacy_li3:'Data aplikasi hanya disimpan secara lokal di perangkat Anda.',
+    privacy_third_title:'Layanan pihak ketiga',
+    privacy_third_text:'Beberapa aplikasi mungkin menggunakan layanan pihak ketiga seperti Google Play Services.',
+    privacy_perm_title:'Izin',
+    privacy_perm_text:'Aplikasi kami hanya meminta izin yang diperlukan untuk berfungsi.',
+    privacy_kids_title:'Keamanan anak',
+    privacy_kids_text:'Aplikasi kami tidak memuat konten yang berbahaya bagi anak-anak.',
+    privacy_changes_title:'Perubahan',
+    privacy_changes_text:'Kami dapat memperbarui kebijakan ini dari waktu ke waktu.',
+    privacy_contact_title:'Kontak',
+    privacy_contact_text:'Ada pertanyaan tentang kebijakan ini? Hubungi kami:',
+    contact_label:'Hubungi kami', contact_title:'Ada pertanyaan?',
+    contact_sub:'Laporan bug, permintaan fitur, atau sekadar halo — kami senang mendengar dari Anda.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Semua hak dilindungi.',
+    search_ph:'Cari', theme_toggle:'Tema', menu_toggle:'Menu'
+  },
+  ja: {
+    flag:'🇯🇵', name:'日本語', code:'JA',
+    nav_apps:'アプリ', nav_privacy:'プライバシー', nav_contact:'お問い合わせ',
+    hero_label:'Androidアプリ',
+    hero_title:'<em>ただ動く</em>アプリ。',
+    hero_sub:'Dream Appsはシンプルで使いやすいAndroidアプリを開発しています。余計なものなし、サブスクなし。',
+    hero_btn:'アプリを見る', hero_cta2:'お問い合わせ',
+    apps_label:'私たちのアプリ', apps_title:'開発中のアプリ',
+    badge_soon:'近日 Google Play に登場', meta_private:'データは端末内にとどまります',
+    app_translator:'素早いテキスト翻訳を常にポケットに。',
+    app_notes:'邪魔なし、シンプルなメモ帳。',
+    app_amp:'イコライザーとバックグラウンド再生を備えた強力な音楽プレーヤー。',
+    app_video:'人気のすべての動画フォーマットをスムーズに再生。',
+    values_label:'私たちの姿勢', values_title:'私たちが守る3つの原則',
+    v1t:'サブスクなし', v1d:'課金の壁も隠れた料金もなく、すべての機能を最初から使えます。',
+    v2t:'アカウント不要', v2d:'登録は不要。データは端末内にとどまります。',
+    v3t:'軽快で高速', v3d:'小さなサイズですぐ起動。古い端末でも快適です。',
+    privacy_label:'法的情報', privacy_title:'プライバシーポリシー',
+    privacy_date:'発効日：2026年6月27日',
+    privacy_intro:'Dream AppsはAndroidアプリを開発しています。このポリシーはデータ収集の実践について説明します。',
+    privacy_collect_title:'収集するデータ',
+    privacy_collect_text:'アプリは主にデバイス上で動作します。サーバーに個人データを収集・保存・共有しません。具体的には：',
+    privacy_li1:'アカウントや登録は不要です。',
+    privacy_li2:'個人情報はサーバーに送信されません。',
+    privacy_li3:'アプリデータはデバイスにのみローカル保存されます。',
+    privacy_third_title:'サードパーティサービス',
+    privacy_third_text:'一部のアプリはGoogle Play Servicesなどのサードパーティサービスを使用する場合があります。',
+    privacy_perm_title:'権限',
+    privacy_perm_text:'アプリは機能に必要な権限のみを要求します。',
+    privacy_kids_title:'子どもの安全',
+    privacy_kids_text:'当アプリには子どもに有害なコンテンツは含まれていません。',
+    privacy_changes_title:'変更',
+    privacy_changes_text:'このポリシーは随時更新される場合があります。',
+    privacy_contact_title:'お問い合わせ',
+    privacy_contact_text:'このポリシーについてご質問は：',
+    contact_label:'お問い合わせ', contact_title:'ご質問はありますか？',
+    contact_sub:'バグ報告、機能リクエスト、またはご挨拶まで — お気軽にご連絡ください。',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. All rights reserved.',
+    search_ph:'検索', theme_toggle:'テーマ', menu_toggle:'メニュー'
+  }
+};
+
+/* ---- additional languages ---- */
+Object.assign(langs, {
+  zh: {
+    flag:'🇨🇳', name:'中文', code:'ZH',
+    nav_apps:'应用', nav_privacy:'隐私', nav_contact:'联系',
+    hero_label:'Android 应用',
+    hero_title:'<em>开箱即用</em>的应用。',
+    hero_sub:'Dream Apps 打造简洁专注的 Android 应用——没有杂乱，没有订阅，没有多余的东西。',
+    hero_btn:'查看应用', hero_cta2:'联系我们',
+    apps_label:'我们的应用', apps_title:'我们正在开发',
+    badge_soon:'即将上架 Google Play', meta_private:'数据保留在您的设备上',
+    app_translator:'快速的文本翻译，随时可用。',
+    app_notes:'简单、无干扰的笔记。',
+    app_amp:'强大的音乐播放器，支持均衡器和后台播放。',
+    app_video:'流畅播放所有主流视频格式。',
+    values_label:'我们的理念', values_title:'我们坚持的三条原则',
+    v1t:'没有订阅', v1d:'没有付费墙，没有隐藏费用——所有功能从一开始就可用。',
+    v2t:'无需账户', v2d:'无需注册。您的数据保留在设备上。',
+    v3t:'快速轻巧', v3d:'体积小，启动快——即使在旧手机上也一样。',
+    privacy_label:'法律信息', privacy_title:'隐私政策',
+    privacy_date:'生效日期：2026年6月27日',
+    privacy_intro:'Dream Apps（“我们”）开发 Android 应用。本隐私政策说明我们在所有应用中收集和使用数据的做法。',
+    privacy_collect_title:'我们收集的数据',
+    privacy_collect_text:'我们的应用主要在设备上运行。我们不会在服务器上收集、存储或共享个人数据。具体而言：',
+    privacy_li1:'无需账户或注册。',
+    privacy_li2:'不会向我们的服务器传输任何个人信息。',
+    privacy_li3:'应用数据（笔记、设置、媒体库）仅存储在您的设备本地。',
+    privacy_third_title:'第三方服务',
+    privacy_third_text:'部分应用可能使用 Google Play 服务等第三方服务，这些服务有各自的隐私政策。',
+    privacy_perm_title:'权限',
+    privacy_perm_text:'我们的应用仅请求运行所必需的权限。',
+    privacy_kids_title:'儿童安全',
+    privacy_kids_text:'我们的应用不含对儿童有害的内容。',
+    privacy_changes_title:'变更',
+    privacy_changes_text:'我们可能会不时更新本政策。变更将在本页面上体现。',
+    privacy_contact_title:'联系',
+    privacy_contact_text:'对本政策有疑问？请联系我们：',
+    contact_label:'联系我们', contact_title:'有问题吗？',
+    contact_sub:'错误报告、功能建议，或只是打个招呼——我们都很乐意听到。',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. 保留所有权利。',
+    search_ph:'搜索', theme_toggle:'主题', menu_toggle:'菜单'
+  },
+  ar: {
+    flag:'🇸🇦', name:'العربية', code:'AR',
+    nav_apps:'التطبيقات', nav_privacy:'الخصوصية', nav_contact:'اتصل بنا',
+    hero_label:'تطبيقات أندرويد',
+    hero_title:'تطبيقات <em>تعمل ببساطة.</em>',
+    hero_sub:'تصنع Dream Apps تطبيقات أندرويد نظيفة ومركّزة — بلا فوضى، بلا اشتراكات، بلا تعقيد.',
+    hero_btn:'استعرض التطبيقات', hero_cta2:'تواصل معنا',
+    apps_label:'تطبيقاتنا', apps_title:'ما نبنيه الآن',
+    badge_soon:'قريبًا على Google Play', meta_private:'بياناتك تبقى على جهازك',
+    app_translator:'ترجمة نصوص سريعة دائمًا في جيبك.',
+    app_notes:'ملاحظات بسيطة بلا تشتيت.',
+    app_amp:'مشغل موسيقى قوي مع معادل صوت وتشغيل في الخلفية.',
+    app_video:'تشغيل سلس لجميع صيغ الفيديو الشائعة.',
+    values_label:'نهجنا', values_title:'ثلاثة مبادئ نلتزم بها',
+    v1t:'بلا اشتراكات', v1d:'لا جدران دفع ولا رسوم خفية — كل الميزات متاحة من البداية.',
+    v2t:'بلا حسابات', v2d:'لا حاجة للتسجيل. بياناتك تبقى على جهازك.',
+    v3t:'سريع وخفيف', v3d:'حجم صغير وتشغيل فوري — حتى على الهواتف القديمة.',
+    privacy_label:'معلومات قانونية', privacy_title:'سياسة الخصوصية',
+    privacy_date:'تاريخ السريان: 27 يونيو 2026',
+    privacy_intro:'تطوّر Dream Apps تطبيقات أندرويد. توضح سياسة الخصوصية هذه ممارساتنا في جمع البيانات واستخدامها في جميع تطبيقاتنا.',
+    privacy_collect_title:'البيانات التي نجمعها',
+    privacy_collect_text:'تعمل تطبيقاتنا بشكل أساسي على الجهاز. نحن لا نجمع بيانات شخصية ولا نخزّنها ولا نشاركها على خوادمنا. وتحديدًا:',
+    privacy_li1:'لا حاجة إلى حساب أو تسجيل.',
+    privacy_li2:'لا تُرسل أي معلومات شخصية إلى خوادمنا.',
+    privacy_li3:'تُحفظ بيانات التطبيق (الملاحظات، الإعدادات، مكتبة الوسائط) محليًا على جهازك فقط.',
+    privacy_third_title:'خدمات الأطراف الثالثة',
+    privacy_third_text:'قد تستخدم بعض التطبيقات خدمات من أطراف ثالثة مثل خدمات Google Play، ولها سياسات خصوصية خاصة بها.',
+    privacy_perm_title:'الأذونات',
+    privacy_perm_text:'تطلب تطبيقاتنا الأذونات الضرورية لعملها فقط.',
+    privacy_kids_title:'سلامة الأطفال',
+    privacy_kids_text:'لا تحتوي تطبيقاتنا على أي محتوى ضار بالأطفال.',
+    privacy_changes_title:'التغييرات',
+    privacy_changes_text:'قد نحدّث هذه السياسة من وقت لآخر. وستظهر التغييرات على هذه الصفحة.',
+    privacy_contact_title:'التواصل',
+    privacy_contact_text:'لديك أسئلة حول هذه السياسة؟ راسلنا:',
+    contact_label:'تواصل معنا', contact_title:'هل لديك سؤال؟',
+    contact_sub:'تقرير عن خطأ، اقتراح ميزة، أو مجرد تحية — يسعدنا أن نسمع منك.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. جميع الحقوق محفوظة.',
+    search_ph:'بحث', theme_toggle:'المظهر', menu_toggle:'القائمة'
+  },
+  bn: {
+    flag:'🇧🇩', name:'বাংলা', code:'BN',
+    nav_apps:'অ্যাপ', nav_privacy:'গোপনীয়তা', nav_contact:'যোগাযোগ',
+    hero_label:'অ্যান্ড্রয়েড অ্যাপ',
+    hero_title:'এমন অ্যাপ যা <em>শুধু কাজ করে।</em>',
+    hero_sub:'Dream Apps পরিষ্কার ও সহজ অ্যান্ড্রয়েড অ্যাপ তৈরি করে — বাড়তি কিছু নেই, সাবস্ক্রিপশন নেই।',
+    hero_btn:'অ্যাপ দেখুন', hero_cta2:'যোগাযোগ করুন',
+    apps_label:'আমাদের অ্যাপ', apps_title:'আমরা যা বানাচ্ছি',
+    badge_soon:'শীঘ্রই Google Play-তে', meta_private:'আপনার ডেটা আপনার ডিভাইসেই থাকে',
+    app_translator:'দ্রুত টেক্সট অনুবাদ সবসময় হাতের কাছে।',
+    app_notes:'সহজ, মনোযোগ নষ্ট না করা নোট।',
+    app_amp:'ইকুয়ালাইজার ও ব্যাকগ্রাউন্ড প্লেব্যাক সহ শক্তিশালী মিউজিক প্লেয়ার।',
+    app_video:'সব জনপ্রিয় ভিডিও ফরম্যাটের মসৃণ প্লেব্যাক।',
+    values_label:'আমাদের দৃষ্টিভঙ্গি', values_title:'আমাদের তিনটি নীতি',
+    v1t:'কোনো সাবস্ক্রিপশন নেই', v1d:'কোনো পেওয়াল বা লুকানো খরচ নেই — সব ফিচার শুরু থেকেই।',
+    v2t:'কোনো অ্যাকাউন্ট নেই', v2d:'নিবন্ধনের দরকার নেই। আপনার ডেটা ডিভাইসেই থাকে।',
+    v3t:'দ্রুত ও হালকা', v3d:'ছোট ডাউনলোড, সঙ্গে সঙ্গে চালু — পুরনো ফোনেও।',
+    privacy_label:'আইনি তথ্য', privacy_title:'গোপনীয়তা নীতি',
+    privacy_date:'কার্যকর তারিখ: ২৭ জুন ২০২৬',
+    privacy_intro:'Dream Apps অ্যান্ড্রয়েড অ্যাপ তৈরি করে। এই নীতিতে আমাদের সব অ্যাপে ডেটা সংগ্রহ ও ব্যবহারের পদ্ধতি ব্যাখ্যা করা হয়েছে।',
+    privacy_collect_title:'আমরা কী ডেটা সংগ্রহ করি',
+    privacy_collect_text:'আমাদের অ্যাপ মূলত ডিভাইসেই কাজ করে। আমরা সার্ভারে ব্যক্তিগত ডেটা সংগ্রহ, সংরক্ষণ বা শেয়ার করি না। বিশেষভাবে:',
+    privacy_li1:'কোনো অ্যাকাউন্ট বা নিবন্ধন লাগে না।',
+    privacy_li2:'কোনো ব্যক্তিগত তথ্য আমাদের সার্ভারে পাঠানো হয় না।',
+    privacy_li3:'অ্যাপের ডেটা (নোট, সেটিংস, মিডিয়া লাইব্রেরি) শুধু আপনার ডিভাইসে স্থানীয়ভাবে সংরক্ষিত হয়।',
+    privacy_third_title:'তৃতীয় পক্ষের সেবা',
+    privacy_third_text:'কিছু অ্যাপ Google Play Services-এর মতো তৃতীয় পক্ষের সেবা ব্যবহার করতে পারে। এগুলোর নিজস্ব গোপনীয়তা নীতি রয়েছে।',
+    privacy_perm_title:'অনুমতি',
+    privacy_perm_text:'আমাদের অ্যাপ শুধু কাজ করার জন্য প্রয়োজনীয় অনুমতিই চায়।',
+    privacy_kids_title:'শিশুদের নিরাপত্তা',
+    privacy_kids_text:'আমাদের অ্যাপে শিশুদের জন্য ক্ষতিকর কোনো কনটেন্ট নেই।',
+    privacy_changes_title:'পরিবর্তন',
+    privacy_changes_text:'আমরা সময়ে সময়ে এই নীতি হালনাগাদ করতে পারি। পরিবর্তন এই পৃষ্ঠায় দেখানো হবে।',
+    privacy_contact_title:'যোগাযোগ',
+    privacy_contact_text:'এই নীতি নিয়ে প্রশ্ন? আমাদের লিখুন:',
+    contact_label:'যোগাযোগ', contact_title:'কোনো প্রশ্ন আছে?',
+    contact_sub:'বাগ রিপোর্ট, ফিচারের অনুরোধ, বা শুধু একটা হ্যালো — আমরা শুনতে চাই।',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. সর্বস্বত্ব সংরক্ষিত।',
+    search_ph:'খুঁজুন', theme_toggle:'থিম', menu_toggle:'মেনু'
+  },
+  ur: {
+    flag:'🇵🇰', name:'اردو', code:'UR',
+    nav_apps:'ایپس', nav_privacy:'رازداری', nav_contact:'رابطہ',
+    hero_label:'اینڈرائیڈ ایپس',
+    hero_title:'ایسی ایپس جو <em>بس کام کرتی ہیں۔</em>',
+    hero_sub:'Dream Apps صاف ستھری اور سادہ اینڈرائیڈ ایپس بناتا ہے — بغیر الجھن، بغیر سبسکرپشن۔',
+    hero_btn:'ایپس دیکھیں', hero_cta2:'ہم سے رابطہ کریں',
+    apps_label:'ہماری ایپس', apps_title:'ہم کیا بنا رہے ہیں',
+    badge_soon:'جلد Google Play پر', meta_private:'آپ کا ڈیٹا آپ کے آلے پر رہتا ہے',
+    app_translator:'تیز متن ترجمہ ہمیشہ آپ کی جیب میں۔',
+    app_notes:'سادہ، بغیر خلل کے نوٹس۔',
+    app_amp:'ایکوالائزر اور پس منظر پلے بیک کے ساتھ طاقتور میوزک پلیئر۔',
+    app_video:'تمام مقبول ویڈیو فارمیٹس کی ہموار پلے بیک۔',
+    values_label:'ہمارا انداز', values_title:'تین اصول جن پر ہم قائم ہیں',
+    v1t:'کوئی سبسکرپشن نہیں', v1d:'کوئی پے وال یا پوشیدہ فیس نہیں — تمام خصوصیات شروع سے دستیاب۔',
+    v2t:'کوئی اکاؤنٹ نہیں', v2d:'رجسٹریشن کی ضرورت نہیں۔ آپ کا ڈیٹا آپ کے آلے پر رہتا ہے۔',
+    v3t:'تیز اور ہلکا', v3d:'چھوٹا ڈاؤن لوڈ، فوری آغاز — پرانے فونز پر بھی۔',
+    privacy_label:'قانونی معلومات', privacy_title:'پرائیویسی پالیسی',
+    privacy_date:'نفاذ کی تاریخ: 27 جون 2026',
+    privacy_intro:'Dream Apps اینڈرائیڈ ایپلیکیشنز بناتا ہے۔ یہ پالیسی ہماری تمام ایپس میں ڈیٹا جمع کرنے اور استعمال کی وضاحت کرتی ہے۔',
+    privacy_collect_title:'ہم کون سا ڈیٹا جمع کرتے ہیں',
+    privacy_collect_text:'ہماری ایپس بنیادی طور پر آلے پر کام کرتی ہیں۔ ہم اپنے سرورز پر ذاتی ڈیٹا جمع، محفوظ یا شیئر نہیں کرتے۔ خاص طور پر:',
+    privacy_li1:'کسی اکاؤنٹ یا رجسٹریشن کی ضرورت نہیں۔',
+    privacy_li2:'کوئی ذاتی معلومات ہمارے سرورز کو نہیں بھیجی جاتی۔',
+    privacy_li3:'ایپ کا ڈیٹا (نوٹس، ترتیبات، میڈیا لائبریری) صرف آپ کے آلے پر مقامی طور پر محفوظ ہوتا ہے۔',
+    privacy_third_title:'فریقِ ثالث کی خدمات',
+    privacy_third_text:'کچھ ایپس Google Play Services جیسی فریقِ ثالث خدمات استعمال کر سکتی ہیں، جن کی اپنی پالیسیاں ہیں۔',
+    privacy_perm_title:'اجازتیں',
+    privacy_perm_text:'ہماری ایپس صرف وہی اجازتیں مانگتی ہیں جو کام کے لیے ضروری ہوں۔',
+    privacy_kids_title:'بچوں کی حفاظت',
+    privacy_kids_text:'ہماری ایپس میں بچوں کے لیے نقصان دہ کوئی مواد نہیں ہے۔',
+    privacy_changes_title:'تبدیلیاں',
+    privacy_changes_text:'ہم وقتاً فوقتاً اس پالیسی کو اپ ڈیٹ کر سکتے ہیں۔ تبدیلیاں اسی صفحے پر ظاہر ہوں گی۔',
+    privacy_contact_title:'رابطہ',
+    privacy_contact_text:'اس پالیسی کے بارے میں سوالات؟ ہمیں لکھیں:',
+    contact_label:'رابطہ کریں', contact_title:'کوئی سوال ہے؟',
+    contact_sub:'بگ رپورٹ، تجویز یا صرف سلام — ہمیں آپ سے سن کر خوشی ہوگی۔',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. جملہ حقوق محفوظ ہیں۔',
+    search_ph:'تلاش', theme_toggle:'تھیم', menu_toggle:'مینو'
+  },
+  ko: {
+    flag:'🇰🇷', name:'한국어', code:'KO',
+    nav_apps:'앱', nav_privacy:'개인정보', nav_contact:'문의',
+    hero_label:'안드로이드 앱',
+    hero_title:'<em>그냥 잘 되는</em> 앱.',
+    hero_sub:'Dream Apps는 깔끔하고 군더더기 없는 안드로이드 앱을 만듭니다. 잡동사니도, 구독도 없습니다.',
+    hero_btn:'앱 살펴보기', hero_cta2:'문의하기',
+    apps_label:'우리의 앱', apps_title:'지금 만들고 있는 것',
+    badge_soon:'곧 Google Play 출시', meta_private:'데이터는 기기에만 남습니다',
+    app_translator:'빠른 텍스트 번역을 언제나 주머니 속에.',
+    app_notes:'방해 없는 심플한 메모.',
+    app_amp:'이퀄라이저와 백그라운드 재생을 지원하는 강력한 음악 플레이어.',
+    app_video:'인기 있는 모든 동영상 형식을 부드럽게 재생.',
+    values_label:'우리의 원칙', values_title:'우리가 지키는 세 가지 원칙',
+    v1t:'구독 없음', v1d:'결제 장벽도 숨은 비용도 없습니다. 모든 기능을 처음부터.',
+    v2t:'계정 없음', v2d:'가입이 필요 없습니다. 데이터는 기기에 남습니다.',
+    v3t:'가볍고 빠르게', v3d:'작은 용량, 즉시 실행 — 오래된 기기에서도.',
+    privacy_label:'법적 고지', privacy_title:'개인정보처리방침',
+    privacy_date:'시행일: 2026년 6월 27일',
+    privacy_intro:'Dream Apps는 안드로이드 앱을 개발합니다. 본 방침은 모든 앱에서의 데이터 수집 및 이용 방식을 설명합니다.',
+    privacy_collect_title:'수집하는 데이터',
+    privacy_collect_text:'저희 앱은 주로 기기에서 동작합니다. 서버에 개인정보를 수집·저장·공유하지 않습니다. 구체적으로:',
+    privacy_li1:'계정이나 가입이 필요하지 않습니다.',
+    privacy_li2:'개인정보가 서버로 전송되지 않습니다.',
+    privacy_li3:'앱 데이터(메모, 설정, 미디어 라이브러리)는 기기에만 저장됩니다.',
+    privacy_third_title:'서드파티 서비스',
+    privacy_third_text:'일부 앱은 Google Play 서비스 등 서드파티 서비스를 사용할 수 있으며, 각자의 방침이 적용됩니다.',
+    privacy_perm_title:'권한',
+    privacy_perm_text:'저희 앱은 작동에 필요한 권한만 요청합니다.',
+    privacy_kids_title:'어린이 안전',
+    privacy_kids_text:'저희 앱에는 어린이에게 유해한 콘텐츠가 없습니다.',
+    privacy_changes_title:'변경',
+    privacy_changes_text:'본 방침은 수시로 업데이트될 수 있으며, 변경 사항은 이 페이지에 반영됩니다.',
+    privacy_contact_title:'문의',
+    privacy_contact_text:'본 방침에 대한 문의는 아래로 연락해 주세요:',
+    contact_label:'문의하기', contact_title:'궁금한 점이 있으신가요?',
+    contact_sub:'버그 신고, 기능 제안, 또는 그냥 인사 — 언제든 환영합니다.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. All rights reserved.',
+    search_ph:'검색', theme_toggle:'테마', menu_toggle:'메뉴'
+  },
+  vi: {
+    flag:'🇻🇳', name:'Tiếng Việt', code:'VI',
+    nav_apps:'Ứng dụng', nav_privacy:'Quyền riêng tư', nav_contact:'Liên hệ',
+    hero_label:'Ứng dụng Android',
+    hero_title:'Ứng dụng <em>chỉ việc dùng.</em>',
+    hero_sub:'Dream Apps tạo ra những ứng dụng Android gọn gàng, tập trung — không rườm rà, không thuê bao.',
+    hero_btn:'Xem ứng dụng', hero_cta2:'Liên hệ với chúng tôi',
+    apps_label:'Ứng dụng của chúng tôi', apps_title:'Những gì chúng tôi đang xây dựng',
+    badge_soon:'Sắp có trên Google Play', meta_private:'Dữ liệu của bạn ở lại trên thiết bị',
+    app_translator:'Dịch văn bản nhanh, luôn trong túi bạn.',
+    app_notes:'Ghi chú đơn giản, không xao nhãng.',
+    app_amp:'Trình phát nhạc mạnh mẽ với bộ chỉnh âm và phát nền.',
+    app_video:'Phát mượt mà mọi định dạng video phổ biến.',
+    values_label:'Cách chúng tôi làm', values_title:'Ba nguyên tắc chúng tôi giữ',
+    v1t:'Không thuê bao', v1d:'Không tường phí, không phí ẩn — mọi tính năng có sẵn ngay từ đầu.',
+    v2t:'Không tài khoản', v2d:'Không cần đăng ký. Dữ liệu của bạn ở lại trên thiết bị.',
+    v3t:'Nhanh và nhẹ', v3d:'Dung lượng nhỏ, mở tức thì — kể cả trên máy cũ.',
+    privacy_label:'Pháp lý', privacy_title:'Chính sách quyền riêng tư',
+    privacy_date:'Ngày hiệu lực: 27 tháng 6 năm 2026',
+    privacy_intro:'Dream Apps phát triển các ứng dụng Android. Chính sách này giải thích cách chúng tôi thu thập và sử dụng dữ liệu trong tất cả ứng dụng.',
+    privacy_collect_title:'Dữ liệu chúng tôi thu thập',
+    privacy_collect_text:'Ứng dụng của chúng tôi hoạt động chủ yếu trên thiết bị. Chúng tôi không thu thập, lưu trữ hay chia sẻ dữ liệu cá nhân trên máy chủ. Cụ thể:',
+    privacy_li1:'Không cần tài khoản hay đăng ký.',
+    privacy_li2:'Không có thông tin cá nhân nào được gửi tới máy chủ của chúng tôi.',
+    privacy_li3:'Dữ liệu ứng dụng (ghi chú, cài đặt, thư viện phương tiện) chỉ được lưu cục bộ trên thiết bị của bạn.',
+    privacy_third_title:'Dịch vụ bên thứ ba',
+    privacy_third_text:'Một số ứng dụng có thể dùng dịch vụ bên thứ ba như Google Play Services, vốn có chính sách riêng.',
+    privacy_perm_title:'Quyền',
+    privacy_perm_text:'Ứng dụng chỉ yêu cầu những quyền cần thiết để hoạt động.',
+    privacy_kids_title:'An toàn cho trẻ em',
+    privacy_kids_text:'Ứng dụng của chúng tôi không có nội dung gây hại cho trẻ em.',
+    privacy_changes_title:'Thay đổi',
+    privacy_changes_text:'Chúng tôi có thể cập nhật chính sách này theo thời gian. Thay đổi sẽ hiển thị trên trang này.',
+    privacy_contact_title:'Liên hệ',
+    privacy_contact_text:'Có câu hỏi về chính sách này? Hãy viết cho chúng tôi:',
+    contact_label:'Liên hệ', contact_title:'Bạn có câu hỏi?',
+    contact_sub:'Báo lỗi, đề xuất tính năng, hay chỉ là lời chào — chúng tôi rất vui được nghe.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Bảo lưu mọi quyền.',
+    search_ph:'Tìm kiếm', theme_toggle:'Giao diện', menu_toggle:'Menu'
+  },
+  it: {
+    flag:'🇮🇹', name:'Italiano', code:'IT',
+    nav_apps:'App', nav_privacy:'Privacy', nav_contact:'Contatti',
+    hero_label:'App Android',
+    hero_title:'App che <em>funzionano e basta.</em>',
+    hero_sub:'Dream Apps crea app Android pulite ed essenziali — senza fronzoli, senza abbonamenti.',
+    hero_btn:'Scopri le app', hero_cta2:'Scrivici',
+    apps_label:'Le nostre app', apps_title:'Cosa stiamo costruendo',
+    badge_soon:'Presto su Google Play', meta_private:'I tuoi dati restano sul dispositivo',
+    app_translator:'Traduzione di testi veloce, sempre in tasca.',
+    app_notes:'Note semplici, senza distrazioni.',
+    app_amp:'Lettore musicale potente con equalizzatore e riproduzione in background.',
+    app_video:'Riproduzione fluida di tutti i formati video più diffusi.',
+    values_label:'Il nostro approccio', values_title:'Tre principi che seguiamo',
+    v1t:'Nessun abbonamento', v1d:'Nessun paywall, nessun costo nascosto: tutte le funzioni fin da subito.',
+    v2t:'Nessun account', v2d:'Niente registrazione. I tuoi dati restano sul dispositivo.',
+    v3t:'Veloce e leggero', v3d:'Download piccoli, avvio immediato — anche su telefoni datati.',
+    privacy_label:'Note legali', privacy_title:'Informativa sulla privacy',
+    privacy_date:'Data di entrata in vigore: 27 giugno 2026',
+    privacy_intro:'Dream Apps sviluppa applicazioni Android. Questa informativa spiega come raccogliamo e usiamo i dati in tutte le nostre app.',
+    privacy_collect_title:'Dati che raccogliamo',
+    privacy_collect_text:'Le nostre app funzionano principalmente sul dispositivo. Non raccogliamo, conserviamo o condividiamo dati personali sui nostri server. In particolare:',
+    privacy_li1:'Non è richiesto alcun account o registrazione.',
+    privacy_li2:'Nessuna informazione personale viene trasmessa ai nostri server.',
+    privacy_li3:'I dati delle app (note, impostazioni, librerie multimediali) restano solo sul tuo dispositivo.',
+    privacy_third_title:'Servizi di terze parti',
+    privacy_third_text:'Alcune app possono usare servizi di terze parti come Google Play Services, che hanno proprie informative.',
+    privacy_perm_title:'Autorizzazioni',
+    privacy_perm_text:'Le nostre app richiedono solo le autorizzazioni necessarie al funzionamento.',
+    privacy_kids_title:'Sicurezza dei bambini',
+    privacy_kids_text:'Le nostre app non contengono contenuti dannosi per i bambini.',
+    privacy_changes_title:'Modifiche',
+    privacy_changes_text:'Possiamo aggiornare questa informativa di tanto in tanto. Le modifiche appariranno su questa pagina.',
+    privacy_contact_title:'Contatti',
+    privacy_contact_text:'Domande su questa informativa? Scrivici:',
+    contact_label:'Contattaci', contact_title:'Hai una domanda?',
+    contact_sub:'Segnalazione di un bug, richiesta di una funzione o solo un saluto — ci fa piacere sentirti.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Tutti i diritti riservati.',
+    search_ph:'Cerca', theme_toggle:'Tema', menu_toggle:'Menu'
+  }
+});
+Object.assign(langs, {
+  th: {
+    flag:'🇹🇭', name:'ไทย', code:'TH',
+    nav_apps:'แอป', nav_privacy:'ความเป็นส่วนตัว', nav_contact:'ติดต่อ',
+    hero_label:'แอป Android',
+    hero_title:'แอปที่ <em>ใช้งานได้เลย</em>',
+    hero_sub:'Dream Apps สร้างแอป Android ที่สะอาดและตรงจุด — ไม่รก ไม่มีค่าสมาชิก ไม่มีเรื่องยุ่งยาก',
+    hero_btn:'ดูแอปทั้งหมด', hero_cta2:'ติดต่อเรา',
+    apps_label:'แอปของเรา', apps_title:'สิ่งที่เรากำลังสร้าง',
+    badge_soon:'เร็ว ๆ นี้บน Google Play', meta_private:'ข้อมูลของคุณอยู่บนเครื่องคุณ',
+    app_translator:'แปลข้อความรวดเร็ว พร้อมใช้ตลอดเวลา',
+    app_notes:'โน้ตเรียบง่าย ไม่มีสิ่งรบกวน',
+    app_amp:'เครื่องเล่นเพลงทรงพลัง พร้อมอีควอไลเซอร์และเล่นเบื้องหลัง',
+    app_video:'เล่นวิดีโอลื่นไหลทุกฟอร์แมตยอดนิยม',
+    values_label:'แนวทางของเรา', values_title:'สามหลักการที่เรายึดถือ',
+    v1t:'ไม่มีค่าสมาชิก', v1d:'ไม่มีกำแพงจ่ายเงิน ไม่มีค่าใช้จ่ายแอบแฝง — ใช้ได้ทุกฟีเจอร์ตั้งแต่แรก',
+    v2t:'ไม่ต้องมีบัญชี', v2d:'ไม่ต้องสมัคร ข้อมูลของคุณอยู่บนเครื่องคุณ',
+    v3t:'เร็วและเบา', v3d:'ไฟล์เล็ก เปิดทันที — แม้บนเครื่องรุ่นเก่า',
+    privacy_label:'ข้อมูลทางกฎหมาย', privacy_title:'นโยบายความเป็นส่วนตัว',
+    privacy_date:'วันที่มีผลบังคับใช้: 27 มิถุนายน 2026',
+    privacy_intro:'Dream Apps พัฒนาแอปพลิเคชัน Android นโยบายนี้อธิบายแนวทางการเก็บและใช้ข้อมูลในทุกแอปของเรา',
+    privacy_collect_title:'ข้อมูลที่เราเก็บ',
+    privacy_collect_text:'แอปของเราทำงานบนอุปกรณ์เป็นหลัก เราไม่เก็บ ไม่บันทึก และไม่แชร์ข้อมูลส่วนบุคคลบนเซิร์ฟเวอร์ของเรา โดยเฉพาะ:',
+    privacy_li1:'ไม่ต้องมีบัญชีหรือลงทะเบียน',
+    privacy_li2:'ไม่มีการส่งข้อมูลส่วนบุคคลไปยังเซิร์ฟเวอร์ของเรา',
+    privacy_li3:'ข้อมูลแอป (โน้ต การตั้งค่า คลังสื่อ) ถูกเก็บไว้บนอุปกรณ์ของคุณเท่านั้น',
+    privacy_third_title:'บริการของบุคคลที่สาม',
+    privacy_third_text:'บางแอปอาจใช้บริการของบุคคลที่สาม เช่น Google Play Services ซึ่งมีนโยบายของตนเอง',
+    privacy_perm_title:'สิทธิ์การเข้าถึง',
+    privacy_perm_text:'แอปของเราขอเฉพาะสิทธิ์ที่จำเป็นต่อการทำงานเท่านั้น',
+    privacy_kids_title:'ความปลอดภัยของเด็ก',
+    privacy_kids_text:'แอปของเราไม่มีเนื้อหาที่เป็นอันตรายต่อเด็ก',
+    privacy_changes_title:'การเปลี่ยนแปลง',
+    privacy_changes_text:'เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว การเปลี่ยนแปลงจะแสดงบนหน้านี้',
+    privacy_contact_title:'ติดต่อ',
+    privacy_contact_text:'มีคำถามเกี่ยวกับนโยบายนี้? เขียนถึงเรา:',
+    contact_label:'ติดต่อเรา', contact_title:'มีคำถามไหม?',
+    contact_sub:'แจ้งบั๊ก เสนอฟีเจอร์ หรือแค่ทักทาย — เรายินดีรับฟัง',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. สงวนลิขสิทธิ์',
+    search_ph:'ค้นหา', theme_toggle:'ธีม', menu_toggle:'เมนู'
+  },
+  nl: {
+    flag:'🇳🇱', name:'Nederlands', code:'NL',
+    nav_apps:'Apps', nav_privacy:'Privacy', nav_contact:'Contact',
+    hero_label:'Android-apps',
+    hero_title:'Apps die <em>gewoon werken.</em>',
+    hero_sub:'Dream Apps maakt heldere, gerichte Android-apps — geen rommel, geen abonnementen, geen gedoe.',
+    hero_btn:'Bekijk de apps', hero_cta2:'Neem contact op',
+    apps_label:'Onze apps', apps_title:'Waar we aan bouwen',
+    badge_soon:'Binnenkort in Google Play', meta_private:'Je gegevens blijven op je toestel',
+    app_translator:'Snelle tekstvertaling, altijd bij de hand.',
+    app_notes:'Eenvoudige notities zonder afleiding.',
+    app_amp:'Krachtige muziekspeler met equalizer en afspelen op de achtergrond.',
+    app_video:'Vloeiend afspelen van alle populaire videoformaten.',
+    values_label:'Onze aanpak', values_title:'Drie principes waar we ons aan houden',
+    v1t:'Geen abonnementen', v1d:'Geen betaalmuren, geen verborgen kosten — alle functies vanaf het begin.',
+    v2t:'Geen accounts', v2d:'Geen registratie nodig. Je gegevens blijven op je toestel.',
+    v3t:'Snel en licht', v3d:'Kleine downloads, direct starten — ook op oudere telefoons.',
+    privacy_label:'Juridisch', privacy_title:'Privacybeleid',
+    privacy_date:'Ingangsdatum: 27 juni 2026',
+    privacy_intro:'Dream Apps ontwikkelt Android-applicaties. Dit privacybeleid legt uit hoe we gegevens verzamelen en gebruiken in al onze apps.',
+    privacy_collect_title:'Welke gegevens we verzamelen',
+    privacy_collect_text:'Onze apps werken vooral op het toestel zelf. We verzamelen, bewaren of delen geen persoonsgegevens op onze servers. Concreet:',
+    privacy_li1:'Een account of registratie is niet nodig.',
+    privacy_li2:'Er wordt geen persoonlijke informatie naar onze servers gestuurd.',
+    privacy_li3:'App-gegevens (notities, instellingen, mediabibliotheken) blijven alleen lokaal op je toestel.',
+    privacy_third_title:'Diensten van derden',
+    privacy_third_text:'Sommige apps gebruiken mogelijk diensten van derden zoals Google Play Services, met een eigen privacybeleid.',
+    privacy_perm_title:'Machtigingen',
+    privacy_perm_text:'Onze apps vragen alleen de machtigingen die nodig zijn om te werken.',
+    privacy_kids_title:'Veiligheid voor kinderen',
+    privacy_kids_text:'Onze apps bevatten geen inhoud die schadelijk is voor kinderen.',
+    privacy_changes_title:'Wijzigingen',
+    privacy_changes_text:'We kunnen dit beleid van tijd tot tijd bijwerken. Wijzigingen verschijnen op deze pagina.',
+    privacy_contact_title:'Contact',
+    privacy_contact_text:'Vragen over dit beleid? Schrijf ons:',
+    contact_label:'Contact', contact_title:'Heb je een vraag?',
+    contact_sub:'Een bug, een idee of gewoon een hallo — we horen graag van je.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Alle rechten voorbehouden.',
+    search_ph:'Zoeken', theme_toggle:'Thema', menu_toggle:'Menu'
+  },
+  fa: {
+    flag:'🇮🇷', name:'فارسی', code:'FA',
+    nav_apps:'برنامه‌ها', nav_privacy:'حریم خصوصی', nav_contact:'تماس',
+    hero_label:'برنامه‌های اندروید',
+    hero_title:'برنامه‌هایی که <em>فقط کار می‌کنند.</em>',
+    hero_sub:'Dream Apps برنامه‌های اندروید تمیز و ساده می‌سازد — بدون شلوغی، بدون اشتراک، بدون دردسر.',
+    hero_btn:'دیدن برنامه‌ها', hero_cta2:'با ما در تماس باشید',
+    apps_label:'برنامه‌های ما', apps_title:'چه چیزی می‌سازیم',
+    badge_soon:'به‌زودی در Google Play', meta_private:'داده‌های شما روی دستگاهتان می‌ماند',
+    app_translator:'ترجمهٔ سریع متن، همیشه در دسترس.',
+    app_notes:'یادداشت‌های ساده و بدون حواس‌پرتی.',
+    app_amp:'پخش‌کنندهٔ موسیقی قدرتمند با اکولایزر و پخش در پس‌زمینه.',
+    app_video:'پخش روان همهٔ قالب‌های ویدیویی پرکاربرد.',
+    values_label:'رویکرد ما', values_title:'سه اصلی که به آن پایبندیم',
+    v1t:'بدون اشتراک', v1d:'بدون دیوار پرداخت و هزینهٔ پنهان — همهٔ امکانات از همان ابتدا.',
+    v2t:'بدون حساب کاربری', v2d:'نیازی به ثبت‌نام نیست. داده‌های شما روی دستگاهتان می‌ماند.',
+    v3t:'سریع و سبک', v3d:'حجم کم، اجرای فوری — حتی روی گوشی‌های قدیمی.',
+    privacy_label:'اطلاعات حقوقی', privacy_title:'سیاست حریم خصوصی',
+    privacy_date:'تاریخ اجرا: ۲۷ ژوئن ۲۰۲۶',
+    privacy_intro:'Dream Apps برنامه‌های اندروید توسعه می‌دهد. این سیاست، شیوهٔ گردآوری و استفاده از داده‌ها را در همهٔ برنامه‌های ما توضیح می‌دهد.',
+    privacy_collect_title:'چه داده‌هایی جمع‌آوری می‌کنیم',
+    privacy_collect_text:'برنامه‌های ما عمدتاً روی دستگاه کار می‌کنند. ما داده‌های شخصی را روی سرورهای خود جمع‌آوری، ذخیره یا به اشتراک نمی‌گذاریم. به‌طور مشخص:',
+    privacy_li1:'به حساب کاربری یا ثبت‌نام نیازی نیست.',
+    privacy_li2:'هیچ اطلاعات شخصی به سرورهای ما ارسال نمی‌شود.',
+    privacy_li3:'داده‌های برنامه (یادداشت‌ها، تنظیمات، کتابخانهٔ رسانه) فقط به‌صورت محلی روی دستگاه شما ذخیره می‌شود.',
+    privacy_third_title:'سرویس‌های شخص ثالث',
+    privacy_third_text:'برخی برنامه‌ها ممکن است از سرویس‌هایی مانند Google Play Services استفاده کنند که سیاست‌های خود را دارند.',
+    privacy_perm_title:'دسترسی‌ها',
+    privacy_perm_text:'برنامه‌های ما تنها دسترسی‌های لازم برای کارکرد را درخواست می‌کنند.',
+    privacy_kids_title:'ایمنی کودکان',
+    privacy_kids_text:'برنامه‌های ما هیچ محتوای زیان‌آور برای کودکان ندارند.',
+    privacy_changes_title:'تغییرات',
+    privacy_changes_text:'ممکن است این سیاست را هر از گاهی به‌روزرسانی کنیم. تغییرات در همین صفحه نمایش داده می‌شود.',
+    privacy_contact_title:'تماس',
+    privacy_contact_text:'دربارهٔ این سیاست پرسشی دارید؟ برای ما بنویسید:',
+    contact_label:'تماس با ما', contact_title:'پرسشی دارید؟',
+    contact_sub:'گزارش اشکال، پیشنهاد قابلیت یا فقط یک سلام — خوشحال می‌شویم بشنویم.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. همهٔ حقوق محفوظ است.',
+    search_ph:'جستجو', theme_toggle:'پوسته', menu_toggle:'منو'
+  },
+  ta: {
+    flag:'🇮🇳', name:'தமிழ்', code:'TA',
+    nav_apps:'ஆப்ஸ்', nav_privacy:'தனியுரிமை', nav_contact:'தொடர்பு',
+    hero_label:'ஆண்ட்ராய்டு ஆப்ஸ்',
+    hero_title:'<em>வேலை செய்யும்</em> ஆப்ஸ்.',
+    hero_sub:'Dream Apps சுத்தமான, எளிய ஆண்ட்ராய்டு ஆப்ஸை உருவாக்குகிறது — தேவையற்றவை இல்லை, சந்தா இல்லை.',
+    hero_btn:'ஆப்ஸைப் பாருங்கள்', hero_cta2:'எங்களைத் தொடர்பு கொள்ளுங்கள்',
+    apps_label:'எங்கள் ஆப்ஸ்', apps_title:'நாங்கள் உருவாக்குவது',
+    badge_soon:'விரைவில் Google Play-இல்', meta_private:'உங்கள் தரவு உங்கள் சாதனத்திலேயே இருக்கும்',
+    app_translator:'விரைவான உரை மொழிபெயர்ப்பு எப்போதும் கையில்.',
+    app_notes:'கவனச்சிதறல் இல்லாத எளிய குறிப்புகள்.',
+    app_amp:'ஈக்வலைசர் மற்றும் பின்னணி இயக்கத்துடன் சக்திவாய்ந்த இசை பிளேயர்.',
+    app_video:'அனைத்து பிரபல வீடியோ வடிவங்களையும் சீராக இயக்கும்.',
+    values_label:'எங்கள் அணுகுமுறை', values_title:'நாங்கள் கடைப்பிடிக்கும் மூன்று கொள்கைகள்',
+    v1t:'சந்தா இல்லை', v1d:'கட்டணத் தடைகள் இல்லை, மறைவான கட்டணங்கள் இல்லை — அனைத்து அம்சங்களும் ஆரம்பத்திலிருந்தே.',
+    v2t:'கணக்கு இல்லை', v2d:'பதிவு தேவையில்லை. உங்கள் தரவு உங்கள் சாதனத்திலேயே இருக்கும்.',
+    v3t:'வேகமும் இலகுவும்', v3d:'சிறிய பதிவிறக்கம், உடனடி துவக்கம் — பழைய ஃபோன்களிலும் கூட.',
+    privacy_label:'சட்டத் தகவல்', privacy_title:'தனியுரிமைக் கொள்கை',
+    privacy_date:'அமலுக்கு வரும் தேதி: 27 ஜூன் 2026',
+    privacy_intro:'Dream Apps ஆண்ட்ராய்டு செயலிகளை உருவாக்குகிறது. இந்தக் கொள்கை எங்கள் அனைத்து ஆப்ஸிலும் தரவு சேகரிப்பு மற்றும் பயன்பாட்டை விளக்குகிறது.',
+    privacy_collect_title:'நாங்கள் சேகரிக்கும் தரவு',
+    privacy_collect_text:'எங்கள் ஆப்ஸ் முக்கியமாக சாதனத்திலேயே இயங்குகின்றன. எங்கள் சர்வர்களில் தனிப்பட்ட தரவை சேகரிக்கவோ, சேமிக்கவோ, பகிரவோ இல்லை. குறிப்பாக:',
+    privacy_li1:'கணக்கு அல்லது பதிவு தேவையில்லை.',
+    privacy_li2:'எந்தத் தனிப்பட்ட தகவலும் எங்கள் சர்வர்களுக்கு அனுப்பப்படுவதில்லை.',
+    privacy_li3:'ஆப் தரவு (குறிப்புகள், அமைப்புகள், மீடியா நூலகம்) உங்கள் சாதனத்தில் மட்டுமே சேமிக்கப்படுகிறது.',
+    privacy_third_title:'மூன்றாம் தரப்பு சேவைகள்',
+    privacy_third_text:'சில ஆப்ஸ் Google Play Services போன்ற மூன்றாம் தரப்பு சேவைகளைப் பயன்படுத்தலாம். அவற்றுக்கு தனி கொள்கைகள் உள்ளன.',
+    privacy_perm_title:'அனுமதிகள்',
+    privacy_perm_text:'எங்கள் ஆப்ஸ் இயங்குவதற்குத் தேவையான அனுமதிகளை மட்டுமே கேட்கின்றன.',
+    privacy_kids_title:'குழந்தைகள் பாதுகாப்பு',
+    privacy_kids_text:'எங்கள் ஆப்ஸில் குழந்தைகளுக்குத் தீங்கு விளைவிக்கும் உள்ளடக்கம் இல்லை.',
+    privacy_changes_title:'மாற்றங்கள்',
+    privacy_changes_text:'இந்தக் கொள்கையை அவ்வப்போது புதுப்பிக்கலாம். மாற்றங்கள் இந்தப் பக்கத்தில் காட்டப்படும்.',
+    privacy_contact_title:'தொடர்பு',
+    privacy_contact_text:'இந்தக் கொள்கை குறித்து கேள்விகளா? எங்களுக்கு எழுதுங்கள்:',
+    contact_label:'தொடர்பு கொள்ளுங்கள்', contact_title:'ஏதேனும் கேள்வி உள்ளதா?',
+    contact_sub:'பிழை அறிக்கை, அம்ச வேண்டுகோள் அல்லது வெறும் வணக்கம் — கேட்க மகிழ்ச்சி.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
+    search_ph:'தேடு', theme_toggle:'தீம்', menu_toggle:'மெனு'
+  },
+  sv: {
+    flag:'🇸🇪', name:'Svenska', code:'SV',
+    nav_apps:'Appar', nav_privacy:'Integritet', nav_contact:'Kontakt',
+    hero_label:'Android-appar',
+    hero_title:'Appar som <em>bara fungerar.</em>',
+    hero_sub:'Dream Apps gör rena, fokuserade Android-appar — inget krångel, inga prenumerationer.',
+    hero_btn:'Utforska apparna', hero_cta2:'Hör av dig',
+    apps_label:'Våra appar', apps_title:'Det vi bygger nu',
+    badge_soon:'Snart på Google Play', meta_private:'Dina data stannar på enheten',
+    app_translator:'Snabb textöversättning alltid nära till hands.',
+    app_notes:'Enkla anteckningar utan distraktioner.',
+    app_amp:'Kraftfull musikspelare med equalizer och bakgrundsuppspelning.',
+    app_video:'Mjuk uppspelning av alla vanliga videoformat.',
+    values_label:'Vårt sätt', values_title:'Tre principer vi håller fast vid',
+    v1t:'Inga prenumerationer', v1d:'Inga betalväggar, inga dolda avgifter — alla funktioner från start.',
+    v2t:'Inga konton', v2d:'Ingen registrering. Dina data stannar på enheten.',
+    v3t:'Snabbt och lätt', v3d:'Små nedladdningar, direkt start — även på äldre telefoner.',
+    privacy_label:'Juridisk information', privacy_title:'Integritetspolicy',
+    privacy_date:'Gäller från: 27 juni 2026',
+    privacy_intro:'Dream Apps utvecklar Android-appar. Den här policyn förklarar hur vi samlar in och använder data i alla våra appar.',
+    privacy_collect_title:'Data vi samlar in',
+    privacy_collect_text:'Våra appar fungerar främst på enheten. Vi samlar inte in, lagrar eller delar personuppgifter på våra servrar. Närmare bestämt:',
+    privacy_li1:'Inget konto och ingen registrering krävs.',
+    privacy_li2:'Ingen personlig information skickas till våra servrar.',
+    privacy_li3:'Appdata (anteckningar, inställningar, mediebibliotek) lagras endast lokalt på din enhet.',
+    privacy_third_title:'Tredjepartstjänster',
+    privacy_third_text:'Vissa appar kan använda tredjepartstjänster som Google Play Services, med egna policyer.',
+    privacy_perm_title:'Behörigheter',
+    privacy_perm_text:'Våra appar begär bara de behörigheter som behövs för att fungera.',
+    privacy_kids_title:'Säkerhet för barn',
+    privacy_kids_text:'Våra appar innehåller inget som är skadligt för barn.',
+    privacy_changes_title:'Ändringar',
+    privacy_changes_text:'Vi kan uppdatera den här policyn då och då. Ändringar visas på den här sidan.',
+    privacy_contact_title:'Kontakt',
+    privacy_contact_text:'Frågor om policyn? Skriv till oss:',
+    contact_label:'Kontakta oss', contact_title:'Har du en fråga?',
+    contact_sub:'Buggrapport, funktionsönskemål eller bara ett hej — vi hör gärna från dig.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Alla rättigheter förbehållna.',
+    search_ph:'Sök', theme_toggle:'Tema', menu_toggle:'Meny'
+  },
+  cs: {
+    flag:'🇨🇿', name:'Čeština', code:'CS',
+    nav_apps:'Aplikace', nav_privacy:'Soukromí', nav_contact:'Kontakt',
+    hero_label:'Aplikace pro Android',
+    hero_title:'Aplikace, které <em>prostě fungují.</em>',
+    hero_sub:'Dream Apps tvoří čisté a soustředěné aplikace pro Android — bez balastu, bez předplatného.',
+    hero_btn:'Prohlédnout aplikace', hero_cta2:'Napište nám',
+    apps_label:'Naše aplikace', apps_title:'Na čem pracujeme',
+    badge_soon:'Brzy na Google Play', meta_private:'Vaše data zůstávají v zařízení',
+    app_translator:'Rychlý překlad textu vždy po ruce.',
+    app_notes:'Jednoduché poznámky bez rozptylování.',
+    app_amp:'Výkonný hudební přehrávač s ekvalizérem a přehráváním na pozadí.',
+    app_video:'Plynulé přehrávání všech běžných video formátů.',
+    values_label:'Náš přístup', values_title:'Tři zásady, kterých se držíme',
+    v1t:'Žádné předplatné', v1d:'Žádné platební brány ani skryté poplatky — všechny funkce hned od začátku.',
+    v2t:'Žádné účty', v2d:'Není třeba se registrovat. Vaše data zůstávají v zařízení.',
+    v3t:'Rychlé a lehké', v3d:'Malé stažení, okamžité spuštění — i na starších telefonech.',
+    privacy_label:'Právní informace', privacy_title:'Zásady ochrany soukromí',
+    privacy_date:'Datum účinnosti: 27. června 2026',
+    privacy_intro:'Dream Apps vyvíjí aplikace pro Android. Tyto zásady vysvětlují, jak ve všech našich aplikacích shromažďujeme a používáme data.',
+    privacy_collect_title:'Jaká data shromažďujeme',
+    privacy_collect_text:'Naše aplikace pracují převážně přímo v zařízení. Na našich serverech neshromažďujeme, neukládáme ani nesdílíme osobní údaje. Konkrétně:',
+    privacy_li1:'Není potřeba účet ani registrace.',
+    privacy_li2:'Na naše servery se nepřenášejí žádné osobní údaje.',
+    privacy_li3:'Data aplikací (poznámky, nastavení, knihovny médií) zůstávají jen lokálně ve vašem zařízení.',
+    privacy_third_title:'Služby třetích stran',
+    privacy_third_text:'Některé aplikace mohou využívat služby třetích stran, například Google Play Services, které mají vlastní zásady.',
+    privacy_perm_title:'Oprávnění',
+    privacy_perm_text:'Naše aplikace žádají pouze o oprávnění nezbytná k jejich fungování.',
+    privacy_kids_title:'Bezpečnost dětí',
+    privacy_kids_text:'Naše aplikace neobsahují obsah škodlivý pro děti.',
+    privacy_changes_title:'Změny',
+    privacy_changes_text:'Tyto zásady můžeme čas od času aktualizovat. Změny se objeví na této stránce.',
+    privacy_contact_title:'Kontakt',
+    privacy_contact_text:'Máte dotazy k těmto zásadám? Napište nám:',
+    contact_label:'Kontaktujte nás', contact_title:'Máte otázku?',
+    contact_sub:'Hlášení chyby, návrh funkce nebo jen pozdrav — rádi se ozveme.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Všechna práva vyhrazena.',
+    search_ph:'Hledat', theme_toggle:'Motiv', menu_toggle:'Menu'
+  },
+  el: {
+    flag:'🇬🇷', name:'Ελληνικά', code:'EL',
+    nav_apps:'Εφαρμογές', nav_privacy:'Απόρρητο', nav_contact:'Επικοινωνία',
+    hero_label:'Εφαρμογές Android',
+    hero_title:'Εφαρμογές που <em>απλώς δουλεύουν.</em>',
+    hero_sub:'Η Dream Apps φτιάχνει καθαρές, στοχευμένες εφαρμογές Android — χωρίς περιττά, χωρίς συνδρομές.',
+    hero_btn:'Δείτε τις εφαρμογές', hero_cta2:'Επικοινωνήστε μαζί μας',
+    apps_label:'Οι εφαρμογές μας', apps_title:'Τι φτιάχνουμε τώρα',
+    badge_soon:'Σύντομα στο Google Play', meta_private:'Τα δεδομένα σας μένουν στη συσκευή',
+    app_translator:'Γρήγορη μετάφραση κειμένου, πάντα πρόχειρη.',
+    app_notes:'Απλές σημειώσεις χωρίς περισπασμούς.',
+    app_amp:'Ισχυρό πρόγραμμα αναπαραγωγής μουσικής με ισοσταθμιστή και αναπαραγωγή στο παρασκήνιο.',
+    app_video:'Ομαλή αναπαραγωγή για όλες τις δημοφιλείς μορφές βίντεο.',
+    values_label:'Η προσέγγισή μας', values_title:'Τρεις αρχές που τηρούμε',
+    v1t:'Χωρίς συνδρομές', v1d:'Χωρίς πληρωμένα τείχη και κρυφές χρεώσεις — όλες οι λειτουργίες από την αρχή.',
+    v2t:'Χωρίς λογαριασμούς', v2d:'Καμία εγγραφή. Τα δεδομένα σας μένουν στη συσκευή σας.',
+    v3t:'Γρήγορο και ελαφρύ', v3d:'Μικρό μέγεθος, άμεση εκκίνηση — ακόμα και σε παλιότερα τηλέφωνα.',
+    privacy_label:'Νομικά', privacy_title:'Πολιτική απορρήτου',
+    privacy_date:'Ημερομηνία ισχύος: 27 Ιουνίου 2026',
+    privacy_intro:'Η Dream Apps αναπτύσσει εφαρμογές Android. Η πολιτική αυτή εξηγεί πώς συλλέγουμε και χρησιμοποιούμε δεδομένα σε όλες τις εφαρμογές μας.',
+    privacy_collect_title:'Δεδομένα που συλλέγουμε',
+    privacy_collect_text:'Οι εφαρμογές μας λειτουργούν κυρίως στη συσκευή. Δεν συλλέγουμε, δεν αποθηκεύουμε και δεν μοιραζόμαστε προσωπικά δεδομένα στους διακομιστές μας. Συγκεκριμένα:',
+    privacy_li1:'Δεν απαιτείται λογαριασμός ή εγγραφή.',
+    privacy_li2:'Καμία προσωπική πληροφορία δεν στέλνεται στους διακομιστές μας.',
+    privacy_li3:'Τα δεδομένα των εφαρμογών (σημειώσεις, ρυθμίσεις, βιβλιοθήκες πολυμέσων) αποθηκεύονται μόνο τοπικά στη συσκευή σας.',
+    privacy_third_title:'Υπηρεσίες τρίτων',
+    privacy_third_text:'Ορισμένες εφαρμογές μπορεί να χρησιμοποιούν υπηρεσίες τρίτων όπως το Google Play Services, με δικές τους πολιτικές.',
+    privacy_perm_title:'Άδειες',
+    privacy_perm_text:'Οι εφαρμογές μας ζητούν μόνο τις άδειες που είναι απαραίτητες για τη λειτουργία τους.',
+    privacy_kids_title:'Ασφάλεια των παιδιών',
+    privacy_kids_text:'Οι εφαρμογές μας δεν περιέχουν περιεχόμενο επιβλαβές για τα παιδιά.',
+    privacy_changes_title:'Αλλαγές',
+    privacy_changes_text:'Ενδέχεται να ενημερώνουμε αυτήν την πολιτική κατά καιρούς. Οι αλλαγές θα εμφανίζονται σε αυτήν τη σελίδα.',
+    privacy_contact_title:'Επικοινωνία',
+    privacy_contact_text:'Ερωτήσεις για αυτήν την πολιτική; Γράψτε μας:',
+    contact_label:'Επικοινωνία', contact_title:'Έχετε μια ερώτηση;',
+    contact_sub:'Αναφορά σφάλματος, πρόταση ή απλώς ένα γεια — χαρά μας να σας ακούσουμε.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Με επιφύλαξη παντός δικαιώματος.',
+    search_ph:'Αναζήτηση', theme_toggle:'Θέμα', menu_toggle:'Μενού'
+  }
+});
+Object.assign(langs, {
+  he: {
+    flag:'🇮🇱', name:'עברית', code:'HE',
+    nav_apps:'אפליקציות', nav_privacy:'פרטיות', nav_contact:'צור קשר',
+    hero_label:'אפליקציות אנדרואיד',
+    hero_title:'אפליקציות ש<em>פשוט עובדות.</em>',
+    hero_sub:'‏Dream Apps מפתחת אפליקציות אנדרואיד נקיות וממוקדות — בלי עומס, בלי מנויים, בלי כאב ראש.',
+    hero_btn:'לצפייה באפליקציות', hero_cta2:'דברו איתנו',
+    apps_label:'האפליקציות שלנו', apps_title:'מה אנחנו בונים',
+    badge_soon:'בקרוב ב-Google Play', meta_private:'הנתונים שלך נשארים במכשיר',
+    app_translator:'תרגום טקסט מהיר תמיד בהישג יד.',
+    app_notes:'פתקים פשוטים בלי הסחות דעת.',
+    app_amp:'נגן מוזיקה חזק עם אקולייזר והשמעה ברקע.',
+    app_video:'נגינה חלקה של כל פורמטי הווידאו הנפוצים.',
+    values_label:'הגישה שלנו', values_title:'שלושה עקרונות שאנחנו שומרים עליהם',
+    v1t:'בלי מנויים', v1d:'בלי חומות תשלום ובלי עלויות נסתרות — כל התכונות מההתחלה.',
+    v2t:'בלי חשבונות', v2d:'אין צורך בהרשמה. הנתונים שלך נשארים במכשיר.',
+    v3t:'מהיר וקל', v3d:'הורדה קטנה, פתיחה מיידית — גם במכשירים ישנים.',
+    privacy_label:'מידע משפטי', privacy_title:'מדיניות פרטיות',
+    privacy_date:'תאריך תחילה: 27 ביוני 2026',
+    privacy_intro:'‏Dream Apps מפתחת אפליקציות אנדרואיד. מדיניות זו מסבירה כיצד אנו אוספים ומשתמשים בנתונים בכל האפליקציות שלנו.',
+    privacy_collect_title:'אילו נתונים אנחנו אוספים',
+    privacy_collect_text:'האפליקציות שלנו פועלות בעיקר על המכשיר. איננו אוספים, שומרים או משתפים מידע אישי בשרתים שלנו. באופן ספציפי:',
+    privacy_li1:'לא נדרש חשבון או הרשמה.',
+    privacy_li2:'שום מידע אישי אינו נשלח לשרתים שלנו.',
+    privacy_li3:'נתוני האפליקציה (פתקים, הגדרות, ספריות מדיה) נשמרים מקומית במכשיר שלך בלבד.',
+    privacy_third_title:'שירותי צד שלישי',
+    privacy_third_text:'חלק מהאפליקציות עשויות להשתמש בשירותי צד שלישי כמו Google Play Services, שלהם מדיניות משלהם.',
+    privacy_perm_title:'הרשאות',
+    privacy_perm_text:'האפליקציות שלנו מבקשות רק את ההרשאות הדרושות לפעולתן.',
+    privacy_kids_title:'בטיחות ילדים',
+    privacy_kids_text:'האפליקציות שלנו אינן מכילות תוכן שמזיק לילדים.',
+    privacy_changes_title:'שינויים',
+    privacy_changes_text:'ייתכן שנעדכן מדיניות זו מעת לעת. שינויים יופיעו בעמוד הזה.',
+    privacy_contact_title:'צור קשר',
+    privacy_contact_text:'שאלות על המדיניות? כתבו לנו:',
+    contact_label:'צור קשר', contact_title:'יש לך שאלה?',
+    contact_sub:'דיווח על באג, בקשה לתכונה או סתם שלום — נשמח לשמוע.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. כל הזכויות שמורות.',
+    search_ph:'חיפוש', theme_toggle:'ערכת נושא', menu_toggle:'תפריט'
+  },
+  ro: {
+    flag:'🇷🇴', name:'Română', code:'RO',
+    nav_apps:'Aplicații', nav_privacy:'Confidențialitate', nav_contact:'Contact',
+    hero_label:'Aplicații Android',
+    hero_title:'Aplicații care <em>pur și simplu funcționează.</em>',
+    hero_sub:'Dream Apps creează aplicații Android curate și concentrate — fără dezordine, fără abonamente.',
+    hero_btn:'Vezi aplicațiile', hero_cta2:'Scrie-ne',
+    apps_label:'Aplicațiile noastre', apps_title:'Ce construim acum',
+    badge_soon:'În curând pe Google Play', meta_private:'Datele tale rămân pe dispozitiv',
+    app_translator:'Traducere rapidă de text, mereu la îndemână.',
+    app_notes:'Notițe simple, fără distrageri.',
+    app_amp:'Player muzical puternic, cu egalizator și redare în fundal.',
+    app_video:'Redare fluidă pentru toate formatele video populare.',
+    values_label:'Abordarea noastră', values_title:'Trei principii pe care le respectăm',
+    v1t:'Fără abonamente', v1d:'Fără ziduri de plată și fără costuri ascunse — toate funcțiile de la început.',
+    v2t:'Fără conturi', v2d:'Nu e nevoie de înregistrare. Datele tale rămân pe dispozitiv.',
+    v3t:'Rapid și ușor', v3d:'Descărcări mici, pornire instantanee — chiar și pe telefoane mai vechi.',
+    privacy_label:'Informații legale', privacy_title:'Politica de confidențialitate',
+    privacy_date:'Data intrării în vigoare: 27 iunie 2026',
+    privacy_intro:'Dream Apps dezvoltă aplicații Android. Această politică explică modul în care colectăm și folosim datele în toate aplicațiile noastre.',
+    privacy_collect_title:'Ce date colectăm',
+    privacy_collect_text:'Aplicațiile noastre funcționează în principal pe dispozitiv. Nu colectăm, nu stocăm și nu partajăm date personale pe serverele noastre. Mai exact:',
+    privacy_li1:'Nu este necesar niciun cont sau înregistrare.',
+    privacy_li2:'Nicio informație personală nu este transmisă serverelor noastre.',
+    privacy_li3:'Datele aplicațiilor (notițe, setări, biblioteci media) sunt stocate doar local pe dispozitivul tău.',
+    privacy_third_title:'Servicii terțe',
+    privacy_third_text:'Unele aplicații pot folosi servicii terțe precum Google Play Services, care au propriile politici.',
+    privacy_perm_title:'Permisiuni',
+    privacy_perm_text:'Aplicațiile noastre solicită doar permisiunile necesare pentru a funcționa.',
+    privacy_kids_title:'Siguranța copiilor',
+    privacy_kids_text:'Aplicațiile noastre nu conțin conținut dăunător pentru copii.',
+    privacy_changes_title:'Modificări',
+    privacy_changes_text:'Putem actualiza această politică din când în când. Modificările vor apărea pe această pagină.',
+    privacy_contact_title:'Contact',
+    privacy_contact_text:'Întrebări despre această politică? Scrie-ne:',
+    contact_label:'Contactează-ne', contact_title:'Ai o întrebare?',
+    contact_sub:'Raportare de eroare, o idee sau doar un salut — ne bucurăm să te auzim.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Toate drepturile rezervate.',
+    search_ph:'Caută', theme_toggle:'Temă', menu_toggle:'Meniu'
+  },
+  ms: {
+    flag:'🇲🇾', name:'Bahasa Melayu', code:'MS',
+    nav_apps:'Aplikasi', nav_privacy:'Privasi', nav_contact:'Hubungi',
+    hero_label:'Aplikasi Android',
+    hero_title:'Aplikasi yang <em>terus berfungsi.</em>',
+    hero_sub:'Dream Apps membina aplikasi Android yang bersih dan fokus — tiada kekusutan, tiada langganan.',
+    hero_btn:'Lihat aplikasi', hero_cta2:'Hubungi kami',
+    apps_label:'Aplikasi kami', apps_title:'Apa yang sedang kami bina',
+    badge_soon:'Akan datang di Google Play', meta_private:'Data anda kekal pada peranti anda',
+    app_translator:'Terjemahan teks pantas sentiasa di hujung jari.',
+    app_notes:'Nota ringkas tanpa gangguan.',
+    app_amp:'Pemain muzik berkuasa dengan penyama dan main latar.',
+    app_video:'Main balik lancar untuk semua format video popular.',
+    values_label:'Pendekatan kami', values_title:'Tiga prinsip yang kami pegang',
+    v1t:'Tiada langganan', v1d:'Tiada tembok bayaran atau caj tersembunyi — semua ciri tersedia dari mula.',
+    v2t:'Tiada akaun', v2d:'Tiada pendaftaran diperlukan. Data anda kekal pada peranti anda.',
+    v3t:'Pantas dan ringan', v3d:'Muat turun kecil, buka serta-merta — walaupun pada telefon lama.',
+    privacy_label:'Undang-undang', privacy_title:'Dasar Privasi',
+    privacy_date:'Tarikh berkuat kuasa: 27 Jun 2026',
+    privacy_intro:'Dream Apps membangunkan aplikasi Android. Dasar ini menerangkan cara kami mengumpul dan menggunakan data dalam semua aplikasi kami.',
+    privacy_collect_title:'Data yang kami kumpul',
+    privacy_collect_text:'Aplikasi kami berfungsi terutamanya pada peranti. Kami tidak mengumpul, menyimpan atau berkongsi data peribadi pada pelayan kami. Secara khusus:',
+    privacy_li1:'Tiada akaun atau pendaftaran diperlukan.',
+    privacy_li2:'Tiada maklumat peribadi dihantar ke pelayan kami.',
+    privacy_li3:'Data aplikasi (nota, tetapan, pustaka media) disimpan secara setempat pada peranti anda sahaja.',
+    privacy_third_title:'Perkhidmatan pihak ketiga',
+    privacy_third_text:'Sesetengah aplikasi mungkin menggunakan perkhidmatan pihak ketiga seperti Google Play Services, yang mempunyai dasar sendiri.',
+    privacy_perm_title:'Kebenaran',
+    privacy_perm_text:'Aplikasi kami hanya meminta kebenaran yang diperlukan untuk berfungsi.',
+    privacy_kids_title:'Keselamatan kanak-kanak',
+    privacy_kids_text:'Aplikasi kami tidak mengandungi kandungan yang berbahaya kepada kanak-kanak.',
+    privacy_changes_title:'Perubahan',
+    privacy_changes_text:'Kami mungkin mengemas kini dasar ini dari semasa ke semasa. Perubahan akan dipaparkan pada halaman ini.',
+    privacy_contact_title:'Hubungi',
+    privacy_contact_text:'Ada soalan tentang dasar ini? Tulis kepada kami:',
+    contact_label:'Hubungi kami', contact_title:'Ada soalan?',
+    contact_sub:'Laporan pepijat, cadangan ciri, atau sekadar salam — kami gembira mendengarnya.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Hak cipta terpelihara.',
+    search_ph:'Cari', theme_toggle:'Tema', menu_toggle:'Menu'
+  },
+  fil: {
+    flag:'🇵🇭', name:'Filipino', code:'FIL',
+    nav_apps:'Mga app', nav_privacy:'Privacy', nav_contact:'Kontak',
+    hero_label:'Mga Android app',
+    hero_title:'Mga app na <em>gumagana lang.</em>',
+    hero_sub:'Gumagawa ang Dream Apps ng malinis at tuwirang mga Android app — walang kalat, walang subscription.',
+    hero_btn:'Tingnan ang mga app', hero_cta2:'Makipag-ugnayan',
+    apps_label:'Ang aming mga app', apps_title:'Ang ginagawa namin ngayon',
+    badge_soon:'Malapit nang mapunta sa Google Play', meta_private:'Nananatili sa device mo ang data mo',
+    app_translator:'Mabilis na pagsasalin ng teksto, laging kasama.',
+    app_notes:'Simpleng notes na walang distraksyon.',
+    app_amp:'Malakas na music player na may equalizer at background playback.',
+    app_video:'Maayos na playback para sa lahat ng sikat na video format.',
+    values_label:'Ang aming paraan', values_title:'Tatlong prinsipyong sinusunod namin',
+    v1t:'Walang subscription', v1d:'Walang paywall, walang nakatagong bayad — kumpleto ang features mula sa umpisa.',
+    v2t:'Walang account', v2d:'Hindi kailangang magrehistro. Nananatili sa device mo ang data mo.',
+    v3t:'Mabilis at magaan', v3d:'Maliit na download, agad bumubukas — kahit sa lumang telepono.',
+    privacy_label:'Legal', privacy_title:'Patakaran sa Privacy',
+    privacy_date:'Petsa ng bisa: Hunyo 27, 2026',
+    privacy_intro:'Gumagawa ang Dream Apps ng mga Android application. Ipinapaliwanag ng patakarang ito kung paano kami nangongolekta at gumagamit ng data sa lahat ng aming app.',
+    privacy_collect_title:'Datos na kinokolekta namin',
+    privacy_collect_text:'Pangunahing gumagana ang aming mga app sa mismong device. Hindi kami nangongolekta, nag-iimbak, o nagbabahagi ng personal na data sa aming mga server. Partikular:',
+    privacy_li1:'Walang kailangang account o pagpaparehistro.',
+    privacy_li2:'Walang personal na impormasyong ipinapadala sa aming mga server.',
+    privacy_li3:'Ang data ng app (notes, settings, media library) ay nasa iyong device lamang.',
+    privacy_third_title:'Mga serbisyo ng third party',
+    privacy_third_text:'May mga app na maaaring gumamit ng third-party na serbisyo gaya ng Google Play Services, na may sariling patakaran.',
+    privacy_perm_title:'Mga pahintulot',
+    privacy_perm_text:'Ang aming mga app ay humihingi lamang ng mga pahintulot na kailangan para gumana.',
+    privacy_kids_title:'Kaligtasan ng bata',
+    privacy_kids_text:'Walang nilalamang nakapipinsala sa mga bata ang aming mga app.',
+    privacy_changes_title:'Mga pagbabago',
+    privacy_changes_text:'Maaari naming i-update ang patakarang ito paminsan-minsan. Makikita ang mga pagbabago sa pahinang ito.',
+    privacy_contact_title:'Kontak',
+    privacy_contact_text:'May tanong tungkol sa patakarang ito? Sulatan kami:',
+    contact_label:'Makipag-ugnayan', contact_title:'May tanong ka?',
+    contact_sub:'Bug report, mungkahi, o simpleng hello — masaya kaming makarinig sa iyo.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Nakalaan ang lahat ng karapatan.',
+    search_ph:'Maghanap', theme_toggle:'Tema', menu_toggle:'Menu'
+  },
+  sw: {
+    flag:'🇰🇪', name:'Kiswahili', code:'SW',
+    nav_apps:'Programu', nav_privacy:'Faragha', nav_contact:'Mawasiliano',
+    hero_label:'Programu za Android',
+    hero_title:'Programu <em>zinazofanya kazi tu.</em>',
+    hero_sub:'Dream Apps hutengeneza programu za Android safi na rahisi — bila vurugu, bila usajili wa kila mwezi.',
+    hero_btn:'Tazama programu', hero_cta2:'Wasiliana nasi',
+    apps_label:'Programu zetu', apps_title:'Tunachojenga sasa',
+    badge_soon:'Inakuja hivi karibuni kwenye Google Play', meta_private:'Data yako inabaki kwenye kifaa chako',
+    app_translator:'Tafsiri ya haraka ya maandishi, daima mkononi.',
+    app_notes:'Madokezo rahisi bila usumbufu.',
+    app_amp:'Kicheza muziki chenye nguvu chenye kisawazishi na uchezaji chinichini.',
+    app_video:'Uchezaji laini wa miundo yote maarufu ya video.',
+    values_label:'Mtazamo wetu', values_title:'Kanuni tatu tunazozishika',
+    v1t:'Hakuna usajili', v1d:'Hakuna kuta za malipo wala gharama zilizofichwa — vipengele vyote tangu mwanzo.',
+    v2t:'Hakuna akaunti', v2d:'Hakuna kujisajili. Data yako inabaki kwenye kifaa chako.',
+    v3t:'Haraka na nyepesi', v3d:'Upakuaji mdogo, hufunguka papo hapo — hata kwenye simu za zamani.',
+    privacy_label:'Kisheria', privacy_title:'Sera ya Faragha',
+    privacy_date:'Tarehe ya kuanza kutumika: 27 Juni 2026',
+    privacy_intro:'Dream Apps hutengeneza programu za Android. Sera hii inaeleza jinsi tunavyokusanya na kutumia data katika programu zetu zote.',
+    privacy_collect_title:'Data tunayokusanya',
+    privacy_collect_text:'Programu zetu hufanya kazi zaidi kwenye kifaa chenyewe. Hatukusanyi, hatuhifadhi wala hatushiriki data binafsi kwenye seva zetu. Hasa:',
+    privacy_li1:'Hakuna akaunti au usajili unaohitajika.',
+    privacy_li2:'Hakuna taarifa binafsi zinazotumwa kwenye seva zetu.',
+    privacy_li3:'Data ya programu (madokezo, mipangilio, maktaba ya midia) huhifadhiwa kwenye kifaa chako pekee.',
+    privacy_third_title:'Huduma za wahusika wengine',
+    privacy_third_text:'Baadhi ya programu zinaweza kutumia huduma za wahusika wengine kama Google Play Services, zenye sera zao.',
+    privacy_perm_title:'Ruhusa',
+    privacy_perm_text:'Programu zetu huomba ruhusa zinazohitajika kufanya kazi pekee.',
+    privacy_kids_title:'Usalama wa watoto',
+    privacy_kids_text:'Programu zetu hazina maudhui yenye madhara kwa watoto.',
+    privacy_changes_title:'Mabadiliko',
+    privacy_changes_text:'Tunaweza kusasisha sera hii mara kwa mara. Mabadiliko yataonekana kwenye ukurasa huu.',
+    privacy_contact_title:'Mawasiliano',
+    privacy_contact_text:'Una maswali kuhusu sera hii? Tuandikie:',
+    contact_label:'Wasiliana nasi', contact_title:'Una swali?',
+    contact_sub:'Ripoti ya hitilafu, wazo la kipengele, au salamu tu — tutafurahi kusikia kutoka kwako.',
+    footer_copy:'© 2026 Dream Apps · dreamapps.it.com. Haki zote zimehifadhiwa.',
+    search_ph:'Tafuta', theme_toggle:'Mandhari', menu_toggle:'Menyu'
+  }
+});
+
+const $ = (s) => document.querySelector(s);
+const store = {
+  get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+  set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+};
+
+/* ---- language ---- */
+const langMenu = $('#langMenu'), langBtn = $('#langBtn'),
+      langList = $('#langList'), langSearch = $('#langSearch');
+const RTL = new Set(['ar','ur','fa','he']);
+let currentLang = 'uk';
+
+/* dropdown order: most widely used first, Ukrainian pinned on top */
+const LANG_ORDER = ['uk','en','zh','es','hi','ar','fr','bn','pt','id','de','ja','ko','tr','vi',
+                    'it','ur','th','pl','nl','fa','ta','sv','cs','el','he','ro','ms','fil','sw'];
+const order = () => LANG_ORDER.filter(c => langs[c])
+  .concat(Object.keys(langs).filter(c => !LANG_ORDER.includes(c)));
+
+function buildMenu(filter){
+  const q = (filter || '').trim().toLowerCase();
+  langList.innerHTML = '';
+  const hits = order().filter(code => {
+    if (!q) return true;
+    const l = langs[code];
+    return (l.name + ' ' + l.code + ' ' + code).toLowerCase().includes(q);
+  });
+  if (!hits.length){
+    const e = document.createElement('div');
+    e.className = 'lang-empty';
+    e.textContent = '—';
+    langList.appendChild(e);
+    return;
+  }
+  hits.forEach(code => {
+    const l = langs[code];
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'lang-opt' + (code === currentLang ? ' active' : '');
+    b.setAttribute('role','menuitem');
+    b.setAttribute('lang', code);
+    /* the row stays LTR; only the name carries its own writing direction */
+    b.innerHTML = '<span class="flag">' + l.flag + '</span>' +
+      '<span class="l-name" dir="' + (RTL.has(code) ? 'rtl' : 'ltr') + '">' + l.name + '</span>' +
+      '<svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-11"/></svg>';
+    b.addEventListener('click', () => { setLang(code); closeMenu(); langBtn.focus(); });
+    langList.appendChild(b);
+  });
+}
+
+function setLang(code){
+  const t = langs[code];
+  if (!t) return;
+  currentLang = code;
+  $('#langFlag').textContent = t.flag;
+  $('#langCode').textContent = t.code;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = t[el.getAttribute('data-i18n')];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.documentElement.lang = code;
+  document.documentElement.dir = RTL.has(code) ? 'rtl' : 'ltr';
+  $('#themeBtn').setAttribute('aria-label', t.theme_toggle);
+  $('#themeBtn').setAttribute('title', t.theme_toggle);
+  $('#burger').setAttribute('aria-label', t.menu_toggle);
+  langSearch.placeholder = t.search_ph || '';
+  langSearch.setAttribute('aria-label', t.search_ph || 'Search language');
+  buildMenu();
+  store.set('da-lang', code);
+}
+
+function openMenu(){
+  langMenu.classList.add('open');
+  langBtn.setAttribute('aria-expanded','true');
+  langSearch.value = '';
+  buildMenu();
+  const active = langList.querySelector('.lang-opt.active');
+  if (active) active.scrollIntoView({ block:'nearest' });
+  if (window.matchMedia('(hover:hover)').matches) langSearch.focus();
+}
+function closeMenu(){ langMenu.classList.remove('open'); langBtn.setAttribute('aria-expanded','false'); }
+
+langSearch.addEventListener('input', () => buildMenu(langSearch.value));
+langSearch.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter'){
+    const first = langList.querySelector('.lang-opt');
+    if (first) first.click();
+  }
+});
+
+langBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  langMenu.classList.contains('open') ? closeMenu() : openMenu();
+});
+document.addEventListener('click', (e) => { if (!e.target.closest('.lang')) closeMenu(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape'){ closeMenu(); closeDrawer(); } });
+
+/* ---- theme ---- */
+const themeBtn = $('#themeBtn');
+function setTheme(mode){
+  document.documentElement.setAttribute('data-theme', mode);
+  store.set('da-theme', mode);
+}
+themeBtn.addEventListener('click', () => {
+  setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+
+/* ---- mobile drawer ---- */
+const burger = $('#burger'), drawer = $('#drawer');
+function syncDrawer(open){
+  burger.setAttribute('aria-expanded', String(open));
+  $('#nav').classList.toggle('menu-open', open);
+}
+function closeDrawer(){ drawer.classList.remove('open'); syncDrawer(false); }
+burger.addEventListener('click', () => syncDrawer(drawer.classList.toggle('open')));
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+window.addEventListener('resize', () => { if (window.innerWidth > 820) closeDrawer(); });
+
+/* ---- sticky nav state ---- */
+const nav = $('#nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+window.addEventListener('scroll', onScroll, { passive:true });
+onScroll();
+
+/* ---- scroll reveal ---- */
+const reveals = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window){
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  reveals.forEach(el => io.observe(el));
+} else {
+  reveals.forEach(el => el.classList.add('in'));
+}
+
+/* ---- pointer glow on app cards ---- */
+if (window.matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+}
+
+/* ---- init ---- */
+(function init(){
+  /* dark violet is the brand default; light is opt-in via the toggle */
+  const savedTheme = store.get('da-theme');
+  setTheme(savedTheme === 'light' ? 'light' : 'dark');
+
+  const saved = store.get('da-lang');
+  const nav2 = (navigator.language || 'uk').slice(0,2).toLowerCase();
+  setLang(langs[saved] ? saved : (langs[nav2] ? nav2 : 'uk'));
+})();
+</script>
+</body>
+</html>
