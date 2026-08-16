@@ -382,6 +382,20 @@ h2{
 .chip svg{width:12px;height:12px}
 .chip .dot{width:5px;height:5px;border-radius:50%;background:currentColor}
 
+/* a shipped app gets a green chip so it reads apart from the "coming soon" ones */
+.chip-live{
+  color:#6ee7b7;background:rgba(52,211,153,.13);
+  border-color:rgba(52,211,153,.32);
+}
+:root[data-theme="light"] .chip-live{color:#047857;background:rgba(5,150,105,.10);border-color:rgba(5,150,105,.28)}
+.chip-live .dot{animation:pulse 2.4s infinite;box-shadow:0 0 0 0 rgba(52,211,153,.5)}
+
+/* official Google Play badge — asset used as supplied, only scaled */
+.play-btn{display:inline-block;margin-top:20px;line-height:0}
+.play-btn img{height:46px;width:auto;display:block;transition:transform .22s var(--ease),filter .22s}
+.play-btn:hover img{transform:translateY(-2px);filter:brightness(1.08)}
+:root[data-theme="light"] .play-btn img{filter:none}
+
 .app-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.5px;color:var(--heading);margin-bottom:9px}
 .app-desc{font-size:14.5px;color:var(--muted);line-height:1.62}
 .app-meta{display:flex;align-items:center;gap:8px;margin-top:22px;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted)}
@@ -676,7 +690,7 @@ setTimeout(function(){
           <span class="app-ic">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5.5l11-2.2V16"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
           </span>
-          <span class="chip"><span class="dot"></span><span data-i18n="badge_soon">Скоро в Google Play</span></span>
+          <span class="chip chip-live"><span class="dot"></span><span data-i18n="badge_live">Уже в Google Play</span></span>
         </div>
         <h3 class="app-name">DreamAmp</h3>
         <p class="app-desc" data-i18n="app_amp">Потужний музичний плеєр з еквалайзером і фоновим відтворенням.</p>
@@ -684,6 +698,10 @@ setTimeout(function(){
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.3 9.4 4.2 4.2 0 0 0 7 19Z"/><path d="M12 12v5"/><path d="m9.5 14.5 2.5-2.5 2.5 2.5"/></svg>
           <span data-i18n="meta_cloud_art">Обкладинки — з інтернету</span>
         </div>
+        <a class="play-btn" href="https://play.google.com/store/apps/details?id=com.dreamamp.app"
+           target="_blank" rel="noopener" aria-label="DreamAmp — Google Play">
+          <img src="/google-play-badge.png" alt="Get it on Google Play" width="646" height="250" />
+        </a>
       </article>
 
       <article class="card reveal" style="--c:#fb7185;--d:240ms">
@@ -849,6 +867,7 @@ const langs = {
     hero_btn:'Переглянути додатки', hero_cta2:'Написати нам',
     apps_label:'Наші додатки', apps_title:'Що ми зараз будуємо',
     badge_soon:'Скоро в Google Play', meta_private:'Дані залишаються на пристрої', meta_cloud_translate:'Переклад через сервіси Google', meta_cloud_art:'Обкладинки — з інтернету',
+    badge_live:'Уже в Google Play',
     app_translator:'Швидкий перекладач тексту завжди під рукою.',
     app_notes:'Простий нотатник без відволікань.',
     app_amp:'Потужний музичний плеєр з еквалайзером і фоновим відтворенням.',
@@ -897,6 +916,7 @@ const langs = {
     hero_btn:'Explore apps', hero_cta2:'Get in touch',
     apps_label:'Our apps', apps_title:'What we are building',
     badge_soon:'Coming soon on Google Play', meta_private:'Your data stays on your device', meta_cloud_translate:'Translation via Google services', meta_cloud_art:'Album art from the internet',
+    badge_live:'Now on Google Play',
     app_translator:'Fast text translation always in your pocket.',
     app_notes:'Simple, distraction-free notes.',
     app_amp:'Powerful music player with equalizer and background playback.',
@@ -945,6 +965,7 @@ const langs = {
     hero_btn:'Apps entdecken', hero_cta2:'Kontakt aufnehmen',
     apps_label:'Unsere Apps', apps_title:'Woran wir arbeiten',
     badge_soon:'Bald bei Google Play', meta_private:'Ihre Daten bleiben auf dem Gerät', meta_cloud_translate:'Übersetzung über Google-Dienste', meta_cloud_art:'Cover aus dem Internet',
+    badge_live:'Jetzt bei Google Play',
     app_translator:'Schnelle Textübersetzung immer griffbereit.',
     app_notes:'Einfache Notizen ohne Ablenkung.',
     app_amp:'Leistungsstarker Musikplayer mit Equalizer und Hintergrundwiedergabe.',
@@ -993,6 +1014,7 @@ const langs = {
     hero_btn:'Découvrir les apps', hero_cta2:'Nous contacter',
     apps_label:'Nos apps', apps_title:'Ce que nous construisons',
     badge_soon:'Bientôt sur Google Play', meta_private:'Vos données restent sur l\'appareil', meta_cloud_translate:'Traduction via les services Google', meta_cloud_art:'Pochettes depuis Internet',
+    badge_live:'Disponible sur Google Play',
     app_translator:'Traduction rapide de texte toujours à portée de main.',
     app_notes:'Prise de notes simple sans distractions.',
     app_amp:'Lecteur de musique puissant avec égaliseur et lecture en arrière-plan.',
@@ -1041,6 +1063,7 @@ const langs = {
     hero_btn:'Ver apps', hero_cta2:'Contáctanos',
     apps_label:'Nuestras apps', apps_title:'En qué estamos trabajando',
     badge_soon:'Próximamente en Google Play', meta_private:'Tus datos se quedan en tu dispositivo', meta_cloud_translate:'Traducción mediante servicios de Google', meta_cloud_art:'Portadas desde Internet',
+    badge_live:'Ya en Google Play',
     app_translator:'Traducción de texto rápida siempre a mano.',
     app_notes:'Notas simples sin distracciones.',
     app_amp:'Reproductor de música potente con ecualizador y reproducción en segundo plano.',
@@ -1089,6 +1112,7 @@ const langs = {
     hero_btn:'Ver apps', hero_cta2:'Fale conosco',
     apps_label:'Nossos apps', apps_title:'O que estamos construindo',
     badge_soon:'Em breve no Google Play', meta_private:'Seus dados ficam no seu dispositivo', meta_cloud_translate:'Tradução via serviços Google', meta_cloud_art:'Capas vindas da internet',
+    badge_live:'Já no Google Play',
     app_translator:'Tradução de texto rápida sempre à mão.',
     app_notes:'Notas simples sem distrações.',
     app_amp:'Poderoso player de música com equalizador e reprodução em segundo plano.',
@@ -1137,6 +1161,7 @@ const langs = {
     hero_btn:'Zobacz aplikacje', hero_cta2:'Napisz do nas',
     apps_label:'Nasze aplikacje', apps_title:'Nad czym pracujemy',
     badge_soon:'Wkrótce w Google Play', meta_private:'Twoje dane zostają na urządzeniu', meta_cloud_translate:'Tłumaczenie przez usługi Google', meta_cloud_art:'Okładki z internetu',
+    badge_live:'Już w Google Play',
     app_translator:'Szybkie tłumaczenie tekstu zawsze pod ręką.',
     app_notes:'Proste notatki bez rozpraszaczy.',
     app_amp:'Potężny odtwarzacz muzyki z korektorem i odtwarzaniem w tle.',
@@ -1185,6 +1210,7 @@ const langs = {
     hero_btn:'Uygulamaları gör', hero_cta2:'Bize ulaşın',
     apps_label:'Uygulamalarımız', apps_title:'Üzerinde çalıştıklarımız',
     badge_soon:'Yakında Google Play\'de', meta_private:'Verileriniz cihazınızda kalır', meta_cloud_translate:'Çeviri Google hizmetleri üzerinden', meta_cloud_art:'Kapaklar internetten',
+    badge_live:"Google Play'de yayında",
     app_translator:'Hızlı metin çevirisi her zaman elinizin altında.',
     app_notes:'Dikkat dağıtıcı unsurlar olmadan basit notlar.',
     app_amp:'Ekolayzer ve arka planda çalma özellikli güçlü müzik çalar.',
@@ -1233,6 +1259,7 @@ const langs = {
     hero_btn:'ऐप्स देखें', hero_cta2:'संपर्क करें',
     apps_label:'हमारे ऐप्स', apps_title:'हम क्या बना रहे हैं',
     badge_soon:'जल्द ही Google Play पर', meta_private:'आपका डेटा आपके डिवाइस पर रहता है', meta_cloud_translate:'अनुवाद Google सेवाओं के ज़रिए', meta_cloud_art:'कवर इंटरनेट से',
+    badge_live:'अब Google Play पर',
     app_translator:'तेज़ टेक्स्ट अनुवाद हमेशा आपकी जेब में।',
     app_notes:'बिना विचलन के सरल नोट्स।',
     app_amp:'इक्वलाइज़र और बैकग्राउंड प्लेबैक के साथ शक्तिशाली म्यूज़िक प्लेयर।',
@@ -1281,6 +1308,7 @@ const langs = {
     hero_btn:'Lihat aplikasi', hero_cta2:'Hubungi kami',
     apps_label:'Aplikasi kami', apps_title:'Yang sedang kami bangun',
     badge_soon:'Segera di Google Play', meta_private:'Data Anda tetap di perangkat Anda', meta_cloud_translate:'Terjemahan lewat layanan Google', meta_cloud_art:'Sampul dari internet',
+    badge_live:'Sudah di Google Play',
     app_translator:'Terjemahan teks cepat selalu siap di saku Anda.',
     app_notes:'Catatan sederhana tanpa gangguan.',
     app_amp:'Pemutar musik canggih dengan equalizer dan pemutaran latar belakang.',
@@ -1329,6 +1357,7 @@ const langs = {
     hero_btn:'アプリを見る', hero_cta2:'お問い合わせ',
     apps_label:'私たちのアプリ', apps_title:'開発中のアプリ',
     badge_soon:'近日 Google Play に登場', meta_private:'データは端末内にとどまります', meta_cloud_translate:'翻訳は Google のサービス経由', meta_cloud_art:'ジャケットはインターネットから',
+    badge_live:'Google Play で公開中',
     app_translator:'素早いテキスト翻訳を常にポケットに。',
     app_notes:'邪魔なし、シンプルなメモ帳。',
     app_amp:'イコライザーとバックグラウンド再生を備えた強力な音楽プレーヤー。',
@@ -1381,6 +1410,7 @@ Object.assign(langs, {
     hero_btn:'查看应用', hero_cta2:'联系我们',
     apps_label:'我们的应用', apps_title:'我们正在开发',
     badge_soon:'即将上架 Google Play', meta_private:'数据保留在您的设备上', meta_cloud_translate:'翻译通过 Google 服务', meta_cloud_art:'封面来自互联网',
+    badge_live:'已上架 Google Play',
     app_translator:'快速的文本翻译，随时可用。',
     app_notes:'简单、无干扰的笔记。',
     app_amp:'强大的音乐播放器，支持均衡器和后台播放。',
@@ -1429,6 +1459,7 @@ Object.assign(langs, {
     hero_btn:'استعرض التطبيقات', hero_cta2:'تواصل معنا',
     apps_label:'تطبيقاتنا', apps_title:'ما نبنيه الآن',
     badge_soon:'قريبًا على Google Play', meta_private:'بياناتك تبقى على جهازك', meta_cloud_translate:'الترجمة عبر خدمات Google', meta_cloud_art:'الأغلفة من الإنترنت',
+    badge_live:'متوفر الآن على Google Play',
     app_translator:'ترجمة نصوص سريعة دائمًا في جيبك.',
     app_notes:'ملاحظات بسيطة بلا تشتيت.',
     app_amp:'مشغل موسيقى قوي مع معادل صوت وتشغيل في الخلفية.',
@@ -1477,6 +1508,7 @@ Object.assign(langs, {
     hero_btn:'অ্যাপ দেখুন', hero_cta2:'যোগাযোগ করুন',
     apps_label:'আমাদের অ্যাপ', apps_title:'আমরা যা বানাচ্ছি',
     badge_soon:'শীঘ্রই Google Play-তে', meta_private:'আপনার ডেটা আপনার ডিভাইসেই থাকে', meta_cloud_translate:'অনুবাদ Google পরিষেবার মাধ্যমে', meta_cloud_art:'প্রচ্ছদ ইন্টারনেট থেকে',
+    badge_live:'এখন Google Play-তে',
     app_translator:'দ্রুত টেক্সট অনুবাদ সবসময় হাতের কাছে।',
     app_notes:'সহজ, মনোযোগ নষ্ট না করা নোট।',
     app_amp:'ইকুয়ালাইজার ও ব্যাকগ্রাউন্ড প্লেব্যাক সহ শক্তিশালী মিউজিক প্লেয়ার।',
@@ -1525,6 +1557,7 @@ Object.assign(langs, {
     hero_btn:'ایپس دیکھیں', hero_cta2:'ہم سے رابطہ کریں',
     apps_label:'ہماری ایپس', apps_title:'ہم کیا بنا رہے ہیں',
     badge_soon:'جلد Google Play پر', meta_private:'آپ کا ڈیٹا آپ کے آلے پر رہتا ہے', meta_cloud_translate:'ترجمہ Google سروسز کے ذریعے', meta_cloud_art:'سرورق انٹرنیٹ سے',
+    badge_live:'اب Google Play پر',
     app_translator:'تیز متن ترجمہ ہمیشہ آپ کی جیب میں۔',
     app_notes:'سادہ، بغیر خلل کے نوٹس۔',
     app_amp:'ایکوالائزر اور پس منظر پلے بیک کے ساتھ طاقتور میوزک پلیئر۔',
@@ -1573,6 +1606,7 @@ Object.assign(langs, {
     hero_btn:'앱 살펴보기', hero_cta2:'문의하기',
     apps_label:'우리의 앱', apps_title:'지금 만들고 있는 것',
     badge_soon:'곧 Google Play 출시', meta_private:'데이터는 기기에만 남습니다', meta_cloud_translate:'번역은 Google 서비스 경유', meta_cloud_art:'앨범 커버는 인터넷에서',
+    badge_live:'Google Play 출시',
     app_translator:'빠른 텍스트 번역을 언제나 주머니 속에.',
     app_notes:'방해 없는 심플한 메모.',
     app_amp:'이퀄라이저와 백그라운드 재생을 지원하는 강력한 음악 플레이어.',
@@ -1621,6 +1655,7 @@ Object.assign(langs, {
     hero_btn:'Xem ứng dụng', hero_cta2:'Liên hệ với chúng tôi',
     apps_label:'Ứng dụng của chúng tôi', apps_title:'Những gì chúng tôi đang xây dựng',
     badge_soon:'Sắp có trên Google Play', meta_private:'Dữ liệu của bạn ở lại trên thiết bị', meta_cloud_translate:'Dịch qua dịch vụ của Google', meta_cloud_art:'Ảnh bìa lấy từ internet',
+    badge_live:'Đã có trên Google Play',
     app_translator:'Dịch văn bản nhanh, luôn trong túi bạn.',
     app_notes:'Ghi chú đơn giản, không xao nhãng.',
     app_amp:'Trình phát nhạc mạnh mẽ với bộ chỉnh âm và phát nền.',
@@ -1669,6 +1704,7 @@ Object.assign(langs, {
     hero_btn:'Scopri le app', hero_cta2:'Scrivici',
     apps_label:'Le nostre app', apps_title:'Cosa stiamo costruendo',
     badge_soon:'Presto su Google Play', meta_private:'I tuoi dati restano sul dispositivo', meta_cloud_translate:'Traduzione tramite servizi Google', meta_cloud_art:'Copertine da internet',
+    badge_live:'Ora su Google Play',
     app_translator:'Traduzione di testi veloce, sempre in tasca.',
     app_notes:'Note semplici, senza distrazioni.',
     app_amp:'Lettore musicale potente con equalizzatore e riproduzione in background.',
@@ -1719,6 +1755,7 @@ Object.assign(langs, {
     hero_btn:'ดูแอปทั้งหมด', hero_cta2:'ติดต่อเรา',
     apps_label:'แอปของเรา', apps_title:'สิ่งที่เรากำลังสร้าง',
     badge_soon:'เร็ว ๆ นี้บน Google Play', meta_private:'ข้อมูลของคุณอยู่บนเครื่องคุณ', meta_cloud_translate:'แปลผ่านบริการของ Google', meta_cloud_art:'ปกอัลบั้มจากอินเทอร์เน็ต',
+    badge_live:'มีแล้วบน Google Play',
     app_translator:'แปลข้อความรวดเร็ว พร้อมใช้ตลอดเวลา',
     app_notes:'โน้ตเรียบง่าย ไม่มีสิ่งรบกวน',
     app_amp:'เครื่องเล่นเพลงทรงพลัง พร้อมอีควอไลเซอร์และเล่นเบื้องหลัง',
@@ -1767,6 +1804,7 @@ Object.assign(langs, {
     hero_btn:'Bekijk de apps', hero_cta2:'Neem contact op',
     apps_label:'Onze apps', apps_title:'Waar we aan bouwen',
     badge_soon:'Binnenkort in Google Play', meta_private:'Je gegevens blijven op je toestel', meta_cloud_translate:'Vertaling via Google-diensten', meta_cloud_art:'Hoezen van internet',
+    badge_live:'Nu in Google Play',
     app_translator:'Snelle tekstvertaling, altijd bij de hand.',
     app_notes:'Eenvoudige notities zonder afleiding.',
     app_amp:'Krachtige muziekspeler met equalizer en afspelen op de achtergrond.',
@@ -1815,6 +1853,7 @@ Object.assign(langs, {
     hero_btn:'دیدن برنامه‌ها', hero_cta2:'با ما در تماس باشید',
     apps_label:'برنامه‌های ما', apps_title:'چه چیزی می‌سازیم',
     badge_soon:'به‌زودی در Google Play', meta_private:'داده‌های شما روی دستگاهتان می‌ماند', meta_cloud_translate:'ترجمه از طریق سرویس‌های Google', meta_cloud_art:'جلدها از اینترنت',
+    badge_live:'اکنون در Google Play',
     app_translator:'ترجمهٔ سریع متن، همیشه در دسترس.',
     app_notes:'یادداشت‌های ساده و بدون حواس‌پرتی.',
     app_amp:'پخش‌کنندهٔ موسیقی قدرتمند با اکولایزر و پخش در پس‌زمینه.',
@@ -1863,6 +1902,7 @@ Object.assign(langs, {
     hero_btn:'ஆப்ஸைப் பாருங்கள்', hero_cta2:'எங்களைத் தொடர்பு கொள்ளுங்கள்',
     apps_label:'எங்கள் ஆப்ஸ்', apps_title:'நாங்கள் உருவாக்குவது',
     badge_soon:'விரைவில் Google Play-இல்', meta_private:'உங்கள் தரவு உங்கள் சாதனத்திலேயே இருக்கும்', meta_cloud_translate:'மொழிபெயர்ப்பு Google சேவைகள் வழியாக', meta_cloud_art:'அட்டைப்படங்கள் இணையத்திலிருந்து',
+    badge_live:'இப்போது Google Play-இல்',
     app_translator:'விரைவான உரை மொழிபெயர்ப்பு எப்போதும் கையில்.',
     app_notes:'கவனச்சிதறல் இல்லாத எளிய குறிப்புகள்.',
     app_amp:'ஈக்வலைசர் மற்றும் பின்னணி இயக்கத்துடன் சக்திவாய்ந்த இசை பிளேயர்.',
@@ -1911,6 +1951,7 @@ Object.assign(langs, {
     hero_btn:'Utforska apparna', hero_cta2:'Hör av dig',
     apps_label:'Våra appar', apps_title:'Det vi bygger nu',
     badge_soon:'Snart på Google Play', meta_private:'Dina data stannar på enheten', meta_cloud_translate:'Översättning via Googles tjänster', meta_cloud_art:'Omslag från internet',
+    badge_live:'Nu på Google Play',
     app_translator:'Snabb textöversättning alltid nära till hands.',
     app_notes:'Enkla anteckningar utan distraktioner.',
     app_amp:'Kraftfull musikspelare med equalizer och bakgrundsuppspelning.',
@@ -1959,6 +2000,7 @@ Object.assign(langs, {
     hero_btn:'Prohlédnout aplikace', hero_cta2:'Napište nám',
     apps_label:'Naše aplikace', apps_title:'Na čem pracujeme',
     badge_soon:'Brzy na Google Play', meta_private:'Vaše data zůstávají v zařízení', meta_cloud_translate:'Překlad přes služby Google', meta_cloud_art:'Obaly z internetu',
+    badge_live:'Už na Google Play',
     app_translator:'Rychlý překlad textu vždy po ruce.',
     app_notes:'Jednoduché poznámky bez rozptylování.',
     app_amp:'Výkonný hudební přehrávač s ekvalizérem a přehráváním na pozadí.',
@@ -2007,6 +2049,7 @@ Object.assign(langs, {
     hero_btn:'Δείτε τις εφαρμογές', hero_cta2:'Επικοινωνήστε μαζί μας',
     apps_label:'Οι εφαρμογές μας', apps_title:'Τι φτιάχνουμε τώρα',
     badge_soon:'Σύντομα στο Google Play', meta_private:'Τα δεδομένα σας μένουν στη συσκευή', meta_cloud_translate:'Μετάφραση μέσω υπηρεσιών Google', meta_cloud_art:'Εξώφυλλα από το διαδίκτυο',
+    badge_live:'Τώρα στο Google Play',
     app_translator:'Γρήγορη μετάφραση κειμένου, πάντα πρόχειρη.',
     app_notes:'Απλές σημειώσεις χωρίς περισπασμούς.',
     app_amp:'Ισχυρό πρόγραμμα αναπαραγωγής μουσικής με ισοσταθμιστή και αναπαραγωγή στο παρασκήνιο.',
@@ -2057,6 +2100,7 @@ Object.assign(langs, {
     hero_btn:'לצפייה באפליקציות', hero_cta2:'דברו איתנו',
     apps_label:'האפליקציות שלנו', apps_title:'מה אנחנו בונים',
     badge_soon:'בקרוב ב-Google Play', meta_private:'הנתונים שלך נשארים במכשיר', meta_cloud_translate:'תרגום דרך שירותי Google', meta_cloud_art:'עטיפות מהאינטרנט',
+    badge_live:'כבר ב-Google Play',
     app_translator:'תרגום טקסט מהיר תמיד בהישג יד.',
     app_notes:'פתקים פשוטים בלי הסחות דעת.',
     app_amp:'נגן מוזיקה חזק עם אקולייזר והשמעה ברקע.',
@@ -2105,6 +2149,7 @@ Object.assign(langs, {
     hero_btn:'Vezi aplicațiile', hero_cta2:'Scrie-ne',
     apps_label:'Aplicațiile noastre', apps_title:'Ce construim acum',
     badge_soon:'În curând pe Google Play', meta_private:'Datele tale rămân pe dispozitiv', meta_cloud_translate:'Traducere prin serviciile Google', meta_cloud_art:'Coperți de pe internet',
+    badge_live:'Acum pe Google Play',
     app_translator:'Traducere rapidă de text, mereu la îndemână.',
     app_notes:'Notițe simple, fără distrageri.',
     app_amp:'Player muzical puternic, cu egalizator și redare în fundal.',
@@ -2153,6 +2198,7 @@ Object.assign(langs, {
     hero_btn:'Lihat aplikasi', hero_cta2:'Hubungi kami',
     apps_label:'Aplikasi kami', apps_title:'Apa yang sedang kami bina',
     badge_soon:'Akan datang di Google Play', meta_private:'Data anda kekal pada peranti anda', meta_cloud_translate:'Terjemahan melalui perkhidmatan Google', meta_cloud_art:'Kulit album dari internet',
+    badge_live:'Kini di Google Play',
     app_translator:'Terjemahan teks pantas sentiasa di hujung jari.',
     app_notes:'Nota ringkas tanpa gangguan.',
     app_amp:'Pemain muzik berkuasa dengan penyama dan main latar.',
@@ -2201,6 +2247,7 @@ Object.assign(langs, {
     hero_btn:'Tingnan ang mga app', hero_cta2:'Makipag-ugnayan',
     apps_label:'Ang aming mga app', apps_title:'Ang ginagawa namin ngayon',
     badge_soon:'Malapit nang mapunta sa Google Play', meta_private:'Nananatili sa device mo ang data mo', meta_cloud_translate:'Pagsasalin sa pamamagitan ng Google', meta_cloud_art:'Mga cover mula sa internet',
+    badge_live:'Nasa Google Play na',
     app_translator:'Mabilis na pagsasalin ng teksto, laging kasama.',
     app_notes:'Simpleng notes na walang distraksyon.',
     app_amp:'Malakas na music player na may equalizer at background playback.',
@@ -2249,6 +2296,7 @@ Object.assign(langs, {
     hero_btn:'Tazama programu', hero_cta2:'Wasiliana nasi',
     apps_label:'Programu zetu', apps_title:'Tunachojenga sasa',
     badge_soon:'Inakuja hivi karibuni kwenye Google Play', meta_private:'Data yako inabaki kwenye kifaa chako', meta_cloud_translate:'Tafsiri kupitia huduma za Google', meta_cloud_art:'Majalada kutoka mtandaoni',
+    badge_live:'Sasa kwenye Google Play',
     app_translator:'Tafsiri ya haraka ya maandishi, daima mkononi.',
     app_notes:'Madokezo rahisi bila usumbufu.',
     app_amp:'Kicheza muziki chenye nguvu chenye kisawazishi na uchezaji chinichini.',
