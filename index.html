@@ -433,13 +433,16 @@ h2{
 .contact-panel p{color:var(--muted);max-width:480px;margin:0 auto 32px}
 .mail-btn{
   display:inline-flex;align-items:center;gap:11px;text-decoration:none;
-  font-size:15.5px;font-weight:600;color:var(--text);
+  /* the address is one long unbreakable token: on a 360px phone the button
+     used to grow past the panel and get clipped by its rounded edge */
+  max-width:100%;overflow-wrap:anywhere;text-align:start;
+  font-size:clamp(13px,3.7vw,15.5px);font-weight:600;color:var(--text);
   background:var(--bg-elev);border:1px solid var(--border);
-  padding:14px 24px;border-radius:14px;
+  padding:14px clamp(14px,4vw,24px);border-radius:14px;
   transition:transform .22s var(--ease),border-color .2s,box-shadow .22s;
 }
 .mail-btn:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 55%,transparent);box-shadow:var(--shadow)}
-.mail-btn svg{width:18px;height:18px;color:var(--accent)}
+.mail-btn svg{width:18px;height:18px;flex:0 0 auto;color:var(--accent)}
 
 /* ============ FOOTER ============ */
 footer{border-top:1px solid var(--border);padding:34px 0;position:relative;z-index:2}
